@@ -100,6 +100,15 @@ export const PERSONAL_PROJECTS_DATA = [
     imageUrl: undefined, // This would be your actual image,
   },
   {
+    id: 'personal-project-9',
+    title: 'Myan Feeds',
+    description: 'Rss feed reader app that fetches and displays news articles from various sources, allowing users to stay updated with the latest news in Myanmar.',
+    technologies: ['Next.js','Rss'],
+    githubUrl: 'https://github.com/sudochitswe-v2/myanfeeds',
+    demoUrl: 'https://myanfeeds.vercel.app/',
+    imageUrl: undefined, // This would be your actual image,
+  },
+  {
     id: 'personal-project-2',
     title: 'TruthLine',
     description: 'Websetite that provides verified news articles and fact-checking services to combat misinformation. (Hackathon Project)',
