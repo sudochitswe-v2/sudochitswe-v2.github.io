@@ -91,13 +91,22 @@ export const COMPANY_PROJECTS_DATA = [
 
 export const PERSONAL_PROJECTS_DATA = [
   {
+    id: 'personal-project-10',
+    title: 'ChaYay (ချရေး)',
+    description: 'A lightweight and simple markdown editor built with flutter for cross-platform use.',
+    technologies: ['Flutter', 'Fluent UI'],
+    githubUrl: 'https://github.com/sudochitswe-v2/chayay',
+    demoUrl: 'https://github.com/sudochitswe-v2/chayay-release',
+    imageUrl: "https://raw.githubusercontent.com/sudochitswe-v2/chayay-release/master/screenshot.png", // This would be your actual image,
+  },
+  {
     id: 'personal-project-1',
     title: 'Kyi Poh',
     description: 'Custom front door movie streaming app using exposed movie APIs to fetch and display movie information.',
     technologies: ['React.js', 'JavaScript', 'CSS', 'HTML', 'Movie APIs'],
-    githubUrl: 'https://github.com/sudochitswe-v2/front.door.pyaz',
+    githubUrl: 'https://github.com/sudochitswe-v2/kyipoh-web  ',
     demoUrl: 'https://kyipoh.vercel.app',
-    imageUrl: undefined, // This would be your actual image,
+    imageUrl: "https://raw.githubusercontent.com/sudochitswe-v2/kyipoh-web/refs/heads/master/screenshot.png", // This would be your actual image,
   },
   {
     id: 'personal-project-9',
