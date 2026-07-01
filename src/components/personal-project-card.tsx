@@ -32,7 +32,7 @@ export function PersonalProjectCard({
                     <div className="relative aspect-video w-full overflow-hidden rounded-md">
                         <Image
                             src={imageUrl}
-                            alt={title}
+                            alt={`${title} - Personal project by Chit Swe - ${description}`}
                             fill
                             className="object-cover"
                         />

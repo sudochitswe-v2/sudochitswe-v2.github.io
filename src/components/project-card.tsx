@@ -34,7 +34,7 @@ export function ProjectCard({ title, description, technologies, imageUrlId }: Pr
           <div className="relative aspect-video w-full overflow-hidden rounded-md">
             <Image
               src={image.imageUrl}
-              alt={image.description || description}
+              alt={`${title} - Project by Chit Swe - ${image.description || description}`}
               fill
               className="object-cover"
               data-ai-hint={image.imageHint}
