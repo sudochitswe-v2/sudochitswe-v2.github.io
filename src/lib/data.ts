@@ -50,8 +50,56 @@ export const EXPERIENCE_DATA = [
     company: 'Apex Integra Co.,Ltd.',
     role: 'Full Stack Developer',
     years: '2022 - 2025',
-    description: '',
+    description: 'Architected and delivered web applications, mobile apps, and enterprise APIs using .NET Core, React.js, Flutter, and MSSQL. Collaborated with cross-functional teams and modernized legacy systems into cloud-ready solutions.',
   }
+];
+
+export const CERTIFICATES_DATA = [
+  {
+    id: 'cert-1',
+    title: 'Level 4 Diploma in Computing',
+    issuer: 'NCC Education (UK)',
+    year: '2024',
+    description: 'Foundational diploma covering Computer Systems, Object-Oriented Programming, and Web Design.',
+    skills: ['C#', 'Web Development', 'Computer Systems'],
+    credentialUrl: '', // Add verification proof URL here
+  },
+  {
+    id: 'cert-2',
+    title: 'KBZ Pay Mini App Developer Training',
+    issuer: 'KBZ Pay',
+    year: '2024',
+    description: 'Mini App Developer Training Certificate.',
+    skills: ['KBZ Pay API', 'JavaScript', 'Integrating with Super App'],
+    credentialUrl: 'https://drive.google.com/file/d/1mLy6w4TRgTVAbbE9Shdjm0THrhvvonI0/view?usp=sharing', // Add verification proof URL here
+  },
+  {
+    id: 'cert-3',
+    title: 'Level 5 Diploma in Computing',
+    issuer: 'NCC Education (UK)',
+    year: '2025',
+    description: 'Advanced diploma covering Software Engineering, Database Development, Cyber Security, and Agile Methodologies.',
+    skills: ['Software Engineering', 'Database Systems', 'Agile'],
+    credentialUrl: '',
+  },
+  {
+    id: 'cert-4',
+    title: 'Basics of Leadership Styles & Theories',
+    issuer: 'UniAthena',
+    year: '2025',
+    description: 'Advanced diploma covering Software Engineering, Database Development, Cyber Security, and Agile Methodologies.',
+    skills: ['Leadership', 'Teamwork', 'Communication'],
+    credentialUrl: 'https://uniathena.com/verify/certificate?certID=5902-4649-0060',
+  },
+  {
+    id: 'cert-5',
+    title: 'Data Analytics Essential',
+    issuer: 'Cisco Networking Academy',
+    year: '2026',
+    description: 'Data Analyst Career Path is a comprehensive program that covers data cleaning, transformation, exploration, visualization, and storytelling. It also includes hands-on projects and case studies to help learners develop practical data analysis skills.',
+    skills: ['Data Cleaning', 'Data Transformation', 'Data Visualization', 'Data Storytelling', 'Data Analysis'],
+    credentialUrl: 'www.credly.com/badges/c79d253e-d6f9-449e-baaf-c872558d3132',
+  },
 ];
 
 export const COMPANY_PROJECTS_DATA = [
@@ -83,7 +131,7 @@ export const COMPANY_PROJECTS_DATA = [
     id: 'bcms2',
     title: 'BCMS 2',
     description:
-      'An outsourced project at GUI Solution (Singapore) that aims to modernize the Buffet Catering Management System from monolithic application into a cloud-native micro-services application over the azure.',
+      'An outsourced project at GUI Solutions Pte Ltd (Singapore) that aims to modernize the Buffet Catering Management System from monolithic application into a cloud-native micro-services application over the azure.',
     technologies: ['C#', '.NET Core', 'WinForm', 'MSSQL', 'Azure', 'Docker', 'Blazor'],
     imageUrlId: 'project4',
   },
@@ -96,8 +144,8 @@ export const PERSONAL_PROJECTS_DATA = [
     description: 'A lightweight and simple markdown editor built with flutter for cross-platform use.',
     technologies: ['Flutter', 'Fluent UI'],
     githubUrl: 'https://github.com/sudochitswe-v2/chayay',
-    demoUrl: 'https://github.com/sudochitswe-v2/chayay-release',
-    imageUrl: "https://raw.githubusercontent.com/sudochitswe-v2/chayay-release/master/screenshot.png", // This would be your actual image,
+    demoUrl: 'https://sudochitswe-v2.github.io/chayay/',
+    imageUrl: "https://raw.githubusercontent.com/sudochitswe-v2/chayay-release/master/screenshot.png",
   },
   {
     id: 'personal-project-1',
@@ -112,7 +160,7 @@ export const PERSONAL_PROJECTS_DATA = [
     id: 'personal-project-9',
     title: 'Myan Feeds',
     description: 'Rss feed reader app that fetches and displays news articles from various sources, allowing users to stay updated with the latest news in Myanmar.',
-    technologies: ['Next.js','Rss'],
+    technologies: ['Next.js', 'Rss'],
     githubUrl: 'https://github.com/sudochitswe-v2/myanfeeds',
     demoUrl: 'https://myanfeeds.vercel.app/',
     imageUrl: undefined, // This would be your actual image,

@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section
-      id="home"
+      id="about"
       className="w-full bg-card py-12 sm:py-24 lg:py-32"
     >
       <div className="container mx-auto px-4 md:px-6">
