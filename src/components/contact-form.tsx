@@ -57,20 +57,24 @@ ${message}
 
 You can reach me at: ${email}`;
 
-    const mailtoLink = `mailto:${PROFILE_DATA.contact.email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+      PROFILE_DATA.contact.email
+    )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     try {
-      window.location.href = mailtoLink;
+      window.open(gmailUrl, '_blank');
+      toast({
+        title: 'Opening Gmail...',
+        description: 'Redirecting to Gmail compose with your message.',
+      });
       form.reset();
     } catch (error) {
-      console.error('Failed to open mail client:', error);
-      toast({
-        variant: 'destructive',
-        title: 'Uh oh! Something went wrong.',
-        description: 'Could not open your mail client. Please try again.',
-      });
+      console.error('Failed to open Gmail:', error);
+      const mailtoLink = `mailto:${PROFILE_DATA.contact.email}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+      form.reset();
     }
   }
 

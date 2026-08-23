@@ -2,13 +2,14 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Bot, X, Send, Sparkles, User, Loader2 } from 'lucide-react';
+import { Bot, X, Send, Sparkles, User, Loader2, ArrowUp } from 'lucide-react';
 import { sendMessageStream, ChatMessage } from '@/lib/ai-chat';
 import { cn } from '@/lib/utils';
 import ReactMarkdown from 'react-markdown';
 
 export default function AIChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: 'model',
@@ -18,6 +19,18 @@ export default function AIChatWidget() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Auto-scroll to bottom of messages
   const scrollToBottom = () => {
@@ -94,9 +107,9 @@ export default function AIChatWidget() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
       {isOpen && (
-        <div className="mb-4 flex h-[500px] w-[350px] sm:w-[400px] flex-col overflow-hidden rounded-2xl border border-purple-500/20 bg-background/95 shadow-[0_0_40px_rgba(168,85,247,0.15)] backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all animate-in slide-in-from-bottom-5">
+        <div className="mb-4 flex h-[500px] w-[350px] sm:w-[400px] flex-col overflow-hidden rounded-2xl border border-purple-500/20 bg-background/95 shadow-[0_0_40px_rgba(168,85,247,0.15)] backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all animate-in slide-in-from-bottom-5 pointer-events-auto">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-purple-500/10 bg-muted/30 p-4">
             <div className="flex items-center gap-2">
@@ -205,7 +218,8 @@ export default function AIChatWidget() {
 
       {/* Floating Button */}
       {!isOpen && (
-        <div className="relative flex flex-col items-end gap-3">
+        <div className="relative flex flex-col items-end gap-3 pointer-events-auto">
+
           {/* Attention Grabber Popup */}
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-700 fill-mode-both rounded-2xl rounded-br-sm bg-background border border-purple-500/20 px-4 py-2 text-sm shadow-lg">
             <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent font-medium">
