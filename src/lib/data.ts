@@ -2,7 +2,7 @@ export const PROFILE_DATA = {
   name: 'Chit Swe',
   title: 'Full Stack Developer',
   introduction:
-    'A passionate and responsible Full Stack Developer with a knack for creative thinking and teamwork. Eager to learn new technologies and build innovative solutions.',
+    'A passionate and responsible Backend-focused Full Stack Developer with a strong aptitude for creative thinking and teamwork. Eager to learn new technologies and build innovative solutions.',
   contact: {
     email: 'chitswe.dev@gmail.com',
   },
@@ -17,7 +17,7 @@ export const SKILLS_BY_LEVEL = {
   Expert: [
     'C#',
     '.NET Core',
-    'DBMS',
+    'RDBMS',
     'Git',
   ],
   Intermediate: [
@@ -35,12 +35,12 @@ export const SKILLS_BY_LEVEL = {
 
 export const SOFT_SKILLS = [
   'Communication',
-  'Creative thinking',
-  'Innovative',
-  'Tolerant',
-  'Flexible',
-  'Responsible',
-  'Willing to learn',
+  'Creative Thinking',
+  'Innovation',
+  'Open-Mindedness',
+  'Flexibility',
+  'Responsibility',
+  'Willingness to Learn',
   'Teamwork',
   'Leadership',
 ];

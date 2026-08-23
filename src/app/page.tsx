@@ -7,6 +7,7 @@ import Certificates from '@/components/sections/certificates';
 import Education from '@/components/sections/education';
 import Contact from '@/components/sections/contact';
 import Footer from '@/components/sections/footer';
+import AIChatWidget from '@/components/ai-chat-widget';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <AIChatWidget />
     </div>
   );
 }

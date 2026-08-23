@@ -71,7 +71,7 @@ export default function Certificates() {
                       className="inline-flex items-center gap-1.5 rounded-md border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-ring"
                     >
                       <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                      <span>Verified</span>
+                      <span>Verify</span>
                       <ExternalLink className="h-3.5 w-3.5" />
                     </a>
                   </div>
