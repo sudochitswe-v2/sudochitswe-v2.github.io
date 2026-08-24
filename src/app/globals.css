@@ -5,10 +5,12 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
+  overflow-x: clip;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: clip;
 }
 
 @layer base {
