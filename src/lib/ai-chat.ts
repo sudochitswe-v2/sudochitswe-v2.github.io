@@ -68,32 +68,57 @@ export async function* sendMessageStream(history: ChatMessage[], newMessage: str
     return;
   }
 
-  try {
-    const formattedHistory = history.map(msg => ({
-      role: msg.role,
-      parts: [{ text: msg.content }],
-    }));
+  const modelsToTry = process.env.NEXT_PUBLIC_GEMINI_MODEL
+    ? [process.env.NEXT_PUBLIC_GEMINI_MODEL]
+    : [
+        'gemini-3.6-flash-lite',
+        'gemini-3.5-flash-lite',
+        'gemini-3.1-flash-lite',
+        'gemini-2.5-flash-lite',
+        'gemini-2.0-flash-lite'
+      ];
 
-    const model = genAI.getGenerativeModel({
-      model: 'gemini-3.6-flash',
-      systemInstruction: await getSystemInstruction()
-    });
+  const formattedHistory = history.map(msg => ({
+    role: msg.role,
+    parts: [{ text: msg.content }],
+  }));
 
-    const chat = model.startChat({
-      history: formattedHistory,
-    });
+  const systemInstruction = await getSystemInstruction();
+  let lastError: any = null;
 
-    const result = await chat.sendMessageStream(newMessage);
-    let fullResponse = '';
+  for (const modelName of modelsToTry) {
+    try {
+      const model = genAI.getGenerativeModel({
+        model: modelName,
+        systemInstruction
+      });
 
-    for await (const chunk of result.stream) {
-      const chunkText = chunk.text();
-      fullResponse += chunkText;
-      yield fullResponse; // Yield the accumulated response so far for typing effect
+      const chat = model.startChat({
+        history: formattedHistory,
+      });
+
+      const result = await chat.sendMessageStream(newMessage);
+      let fullResponse = '';
+
+      for await (const chunk of result.stream) {
+        const chunkText = chunk.text();
+        fullResponse += chunkText;
+        yield fullResponse; // Yield the accumulated response so far for typing effect
+      }
+      
+      // If we successfully finished streaming, return to exit the generator
+      return;
+    } catch (error: any) {
+      console.warn(`Failed to generate message stream with model ${modelName}:`, error);
+      lastError = error;
+      // Continue to the next model in the list
     }
-  } catch (error: any) {
-    console.error('Error communicating with Gemini API:', error);
-    if (error?.message?.includes('503') || error?.status === 503) {
+  }
+
+  // If all models failed, handle the error
+  if (lastError) {
+    console.error('All Gemini Flash-Lite models failed:', lastError);
+    if (lastError?.message?.includes('503') || lastError?.status === 503) {
       yield "The AI model is currently experiencing high demand. Please try again in a few moments!";
     } else {
       yield "I'm sorry, I encountered an error while trying to generate a response. Please try again later.";

@@ -62,7 +62,7 @@ export const CERTIFICATES_DATA = [
     year: '2024',
     description: 'Foundational diploma covering Computer Systems, Object-Oriented Programming, and Web Design.',
     skills: ['C#', 'Web Development', 'Computer Systems'],
-    credentialUrl: '', // Add verification proof URL here
+    credentialUrl: '',
   },
   {
     id: 'cert-2',
@@ -87,7 +87,7 @@ export const CERTIFICATES_DATA = [
     title: 'Basics of Leadership Styles & Theories',
     issuer: 'UniAthena',
     year: '2025',
-    description: 'Advanced diploma covering Software Engineering, Database Development, Cyber Security, and Agile Methodologies.',
+    description: 'Covers basic leadership styles, theories, and principles including Situational Leadership.',
     skills: ['Leadership', 'Teamwork', 'Communication'],
     credentialUrl: 'https://uniathena.com/verify/certificate?certID=5902-4649-0060',
   },
@@ -163,16 +163,16 @@ export const PERSONAL_PROJECTS_DATA = [
     technologies: ['Next.js', 'Rss'],
     githubUrl: 'https://github.com/sudochitswe-v2/myanfeeds',
     demoUrl: 'https://myanfeeds.vercel.app/',
-    imageUrl: undefined, // This would be your actual image,
+    imageUrl: 'https://raw.githubusercontent.com/sudochitswe-v2/myanfeeds/refs/heads/master/screenshot.png', // This would be your actual image,
   },
   {
     id: 'personal-project-2',
     title: 'TruthLine',
     description: 'Websetite that provides verified news articles and fact-checking services to combat misinformation. (Hackathon Project)',
     technologies: ['.NET MVC', 'Razor Pages', 'MariaDb', 'Bootstrap'],
-    githubUrl: 'https://github.com/sudochitswe-v2/TruthLine.infernov',
+    githubUrl: 'https://github.com/sudochitswe-v2/TruthLine',
     demoUrl: undefined,
-    imageUrl: undefined, // This would be your actual image
+    imageUrl: "https://raw.githubusercontent.com/sudochitswe-v2/TruthLine/refs/heads/master/screenshot.png", // This would be your actual image
   },
   {
     id: 'personal-project-3',
@@ -181,7 +181,7 @@ export const PERSONAL_PROJECTS_DATA = [
     technologies: ['.NET MVC', 'Razor Pages', 'MariaDb', 'Bootstrap', 'Hangfire'],
     githubUrl: 'https://github.com/sudochitswe-v2/CSMF',
     demoUrl: undefined,
-    imageUrl: undefined, // This would be your actual image
+    imageUrl: "https://raw.githubusercontent.com/sudochitswe-v2/CSMF/refs/heads/master/screenshot.png", // This would be your actual image
   },
   {
     id: 'personal-project-4',
@@ -190,7 +190,7 @@ export const PERSONAL_PROJECTS_DATA = [
     technologies: ['Laravel', 'Blade', 'PHP', 'MariaDb', 'Bootstrap'],
     githubUrl: 'https://github.com/sudochitswe-v2/foodify-laravel',
     demoUrl: undefined,
-    imageUrl: undefined, // This would be your actual image
+    imageUrl: "https://raw.githubusercontent.com/sudochitswe-v2/foodify-laravel/refs/heads/master/screenshot.png", // This would be your actual image
   },
   {
     id: 'personal-project-5',
