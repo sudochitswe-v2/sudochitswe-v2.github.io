@@ -42,7 +42,7 @@ export default function Hero() {
                   </a>
                 </Button>
                 <Button asChild variant="secondary" size="lg">
-                  <a href="file/sudochitswe.pdf" download>
+                  <a href="/file/sudochitswe.pdf" target="_blank" rel="noopener noreferrer">
                     <Download className="mr-2 h-5 w-5" /> Download Resume
                   </a>
                 </Button>
