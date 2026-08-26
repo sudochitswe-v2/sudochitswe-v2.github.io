@@ -10,11 +10,11 @@ export default function Projects() {
     <section id="projects" className="w-full bg-card py-12 md:py-24 lg:py-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">
-              Projects
+          <div className="space-y-4">
+            <h2 className="font-mono text-4xl font-bold tracking-tighter uppercase sm:text-6xl text-foreground">
+              [04] Projects
             </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px] text-foreground font-medium md:text-xl">
               A collection of professional applications and open-source hobby projects I&apos;ve built.
             </p>
           </div>

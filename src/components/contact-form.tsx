@@ -80,11 +80,11 @@ You can reach me at: ${email}`;
 
   return (
     <div className="mx-auto w-full max-w-screen-md">
-       <div className="mb-8 text-center">
-         <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">
+       <div className="mb-8 text-center brutal-border p-6 bg-card brutal-shadow-md">
+         <h2 className="font-mono text-3xl font-bold tracking-tighter uppercase sm:text-5xl text-foreground">
            Get in Touch
          </h2>
-         <p className="mt-2 text-muted-foreground md:text-xl/relaxed">
+         <p className="mt-4 font-mono font-medium text-foreground md:text-xl">
            I&apos;m open to discussing new projects and opportunities.
          </p>
        </div>

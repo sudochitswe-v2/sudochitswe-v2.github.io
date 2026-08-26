@@ -6,7 +6,7 @@ import { PROFILE_DATA } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Chit Swe | Full Stack Developer & Software Engineer',
+    default: 'Chit Swe | Full Stack Developer',
     template: '%s | Chit Swe',
   },
   description: 'Portfolio of Chit Swe, a Full Stack Developer specialized in C#, .NET Core, Flutter, and React.js. Explore my projects, work experience, and technical skills.',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     firstName: 'Chit',
     lastName: 'Swe',
     username: 'sudochitswe',
-    title: 'Chit Swe | Full Stack Developer & Software Engineer',
+    title: 'Chit Swe | Full Stack Developer',
     description: 'Portfolio of Chit Swe, a Full Stack Developer specialized in C#, .NET Core, Flutter, and React.js.',
     url: '/',
     siteName: 'Chit Swe Portfolio',
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Chit Swe | Full Stack Developer & Software Engineer',
+        alt: 'Chit Swe | Full Stack Developer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Chit Swe | Full Stack Developer & Software Engineer',
+    title: 'Chit Swe | Full Stack Developer',
     description: 'Portfolio of Chit Swe, a Full Stack Developer specialized in C#, .NET Core, Flutter, and React.js.',
     images: ['/images/og-image.png'],
     creator: '@sudochitswe',
@@ -114,7 +114,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
           rel="stylesheet"
         />
         <script

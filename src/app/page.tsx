@@ -8,7 +8,6 @@ import Education from '@/components/sections/education';
 import Contact from '@/components/sections/contact';
 import Footer from '@/components/sections/footer';
 import AIChatWidget from '@/components/ai-chat-widget';
-import ScrollReveal from '@/components/ui/scroll-reveal';
 
 export default function Home() {
   return (
@@ -16,24 +15,18 @@ export default function Home() {
       <Header />
       <main className="flex-1 overflow-x-clip">
         <Hero />
-        <ScrollReveal direction="up" delay={0.1}>
-          <Experience />
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.1}>
-          <Skills />
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.1}>
-          <Projects />
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.1}>
-          <Certificates />
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.1}>
-          <Education />
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.1}>
-          <Contact />
-        </ScrollReveal>
+        <hr className="border-t-4 border-foreground" />
+        <Experience />
+        <hr className="border-t-4 border-foreground" />
+        <Skills />
+        <hr className="border-t-4 border-foreground" />
+        <Projects />
+        <hr className="border-t-4 border-foreground" />
+        <Certificates />
+        <hr className="border-t-4 border-foreground" />
+        <Education />
+        <hr className="border-t-4 border-foreground" />
+        <Contact />
       </main>
       <Footer />
       <AIChatWidget />

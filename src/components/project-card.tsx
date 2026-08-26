@@ -25,25 +25,25 @@ const getImageById = (id?: string): ImagePlaceholder | undefined => {
 export function ProjectCard({ title, description, technologies, imageUrlId }: ProjectCardProps) {
   const image = getImageById(imageUrlId);
   return (
-    <Card className="flex h-full flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
+    <Card className="flex h-full flex-col overflow-hidden brutal-hover bg-card">
+      {image?.imageUrl ? (
+        <div className="relative aspect-video w-full border-b-4 border-foreground">
+          <Image
+            src={image.imageUrl}
+            alt={`${title} - Project by Chit Swe - ${image.description || description}`}
+            fill
+            className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
+            data-ai-hint={image.imageHint}
+          />
+        </div>
+      ) : (
+        <div className="h-4 border-b-4 border-foreground bg-accent-yellow"></div>
+      )}
       <CardHeader>
-        <CardTitle className="font-headline text-2xl">{title}</CardTitle>
+        <CardTitle className="font-mono text-2xl font-bold uppercase">{title}</CardTitle>
       </CardHeader>
       <CardContent className="flex-grow space-y-4">
-        {image?.imageUrl ? (
-          <div className="relative aspect-video w-full overflow-hidden rounded-md">
-            <Image
-              src={image.imageUrl}
-              alt={`${title} - Project by Chit Swe - ${image.description || description}`}
-              fill
-              className="object-cover"
-              data-ai-hint={image.imageHint}
-            />
-          </div>
-        ) : (
-          <div></div>
-        )}
-        <CardDescription>{description}</CardDescription>
+        <CardDescription className="text-foreground text-base font-medium">{description}</CardDescription>
       </CardContent>
       <CardFooter>
         <div className="flex flex-wrap gap-2">

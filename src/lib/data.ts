@@ -2,7 +2,7 @@ export const PROFILE_DATA = {
   name: 'Chit Swe',
   title: 'Full Stack Developer',
   introduction:
-    'A passionate and responsible Backend-focused Full Stack Developer with a strong aptitude for creative thinking and teamwork. Eager to learn new technologies and build innovative solutions.',
+    'A passionate and responsible backend-focus Full Stack Developer with a strong aptitude for creative thinking and teamwork. Eager to learn new technologies and build innovative solutions.',
   contact: {
     email: 'chitswe.dev@gmail.com',
   },

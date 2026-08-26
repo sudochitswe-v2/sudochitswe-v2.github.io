@@ -8,50 +8,50 @@ export default function Certificates() {
     <section id="certificates" className="w-full bg-muted/50 py-12 md:py-24 lg:py-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">
-              Certificates
+          <div className="space-y-4">
+            <h2 className="font-mono text-4xl font-bold tracking-tighter uppercase sm:text-6xl text-foreground">
+              [05] Certificates
             </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px] text-foreground font-medium md:text-xl">
               Professional diplomas, technical certifications, and verified achievements.
             </p>
           </div>
         </div>
 
-        <div className="mx-auto mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:max-w-6xl">
+        <div className="mx-auto mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 lg:max-w-6xl">
           {CERTIFICATES_DATA.map((cert) => (
             <Card
               key={cert.id}
-              className="group relative flex flex-col justify-between overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-card border border-border/50"
+              className="group relative flex flex-col justify-between overflow-hidden transition-none brutal-hover bg-card brutal-border brutal-shadow-md"
             >
               <CardHeader className="space-y-3 pb-3">
                 <div className="flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <div className="flex h-12 w-12 items-center justify-center brutal-border bg-accent-green text-black transition-none group-hover:bg-foreground group-hover:text-background">
                     <Award className="h-6 w-6" />
                   </div>
-                  <Badge variant="outline" className="flex items-center gap-1 text-xs">
+                  <Badge variant="outline" className="flex items-center gap-1 text-xs brutal-border px-2 py-1 bg-white text-black font-mono">
                     <Calendar className="h-3 w-3" />
                     {cert.year}
                   </Badge>
                 </div>
                 <div>
-                  <CardTitle className="font-headline text-xl font-bold tracking-tight">
+                  <CardTitle className="font-mono text-xl font-bold uppercase tracking-tight">
                     {cert.title}
                   </CardTitle>
-                  <p className="mt-1 text-sm font-medium text-accent">
+                  <p className="mt-2 text-sm font-bold font-mono text-background bg-foreground inline-block px-2 py-0.5 uppercase">
                     {cert.issuer}
                   </p>
                 </div>
               </CardHeader>
 
               <CardContent className="space-y-4 pt-0">
-                <CardDescription className="text-sm text-muted-foreground leading-relaxed">
+                <CardDescription className="text-sm font-medium text-foreground leading-relaxed mt-2 border-l-2 border-foreground pl-2">
                   {cert.description}
                 </CardDescription>
 
-                <div className="flex flex-wrap gap-1.5 pt-2">
+                <div className="flex flex-wrap gap-2 pt-2">
                   {cert.skills.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="text-xs font-normal">
+                    <Badge key={skill} variant="secondary" className="text-xs bg-white text-black brutal-border">
                       {skill}
                     </Badge>
                   ))}
@@ -68,9 +68,9 @@ export default function Certificates() {
                       }
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-md border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                      className="inline-flex items-center gap-1.5 brutal-border bg-accent-green text-black px-4 py-2 text-xs font-bold font-mono uppercase brutal-shadow-sm brutal-hover transition-none"
                     >
-                      <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                      <CheckCircle2 className="h-4 w-4" />
                       <span>Verify</span>
                       <ExternalLink className="h-3.5 w-3.5" />
                     </a>

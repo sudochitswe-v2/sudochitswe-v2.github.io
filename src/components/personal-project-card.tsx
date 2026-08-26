@@ -23,24 +23,24 @@ export function PersonalProjectCard({
     imageUrl
 }: PersonalProjectCardProps) {
     return (
-        <Card className="flex h-full flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
+        <Card className="flex h-full flex-col overflow-hidden brutal-hover bg-card">
+            {imageUrl ? (
+                <div className="relative aspect-video w-full border-b-4 border-foreground">
+                    <Image
+                        src={imageUrl}
+                        alt={`${title} - Personal project by Chit Swe - ${description}`}
+                        fill
+                        className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                </div>
+            ) : (
+                <div className="h-4 border-b-4 border-foreground bg-accent-pink"></div>
+            )}
             <CardHeader>
-                <CardTitle className="font-headline text-2xl">{title}</CardTitle>
+                <CardTitle className="font-mono text-2xl font-bold uppercase">{title}</CardTitle>
             </CardHeader>
             <CardContent className="flex-grow space-y-4">
-                {imageUrl ? (
-                    <div className="relative aspect-video w-full overflow-hidden rounded-md">
-                        <Image
-                            src={imageUrl}
-                            alt={`${title} - Personal project by Chit Swe - ${description}`}
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
-                ) : (
-                    <div></div>
-                )}
-                <CardDescription>{description}</CardDescription>
+                <CardDescription className="text-foreground text-base font-medium">{description}</CardDescription>
             </CardContent>
             <CardFooter className="flex flex-col items-start gap-4">
                 <div className="flex flex-wrap gap-2">
@@ -51,12 +51,11 @@ export function PersonalProjectCard({
                     ))}
                 </div>
                 <div className="flex gap-3">
-                    {/* <SiGithub color="currentColor" size={20} /> */}
                     <a
                         href={githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center rounded-md border px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                        className="inline-flex items-center brutal-border px-4 py-2 text-sm font-bold font-mono uppercase bg-accent-yellow text-black brutal-shadow-sm brutal-hover"
                     >
                         <SiGithub size={20} />
                     </a>
@@ -65,7 +64,7 @@ export function PersonalProjectCard({
                             href={demoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center rounded-md border px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="inline-flex items-center brutal-border px-4 py-2 text-sm font-bold font-mono uppercase bg-white text-black brutal-shadow-sm brutal-hover"
                         >
                             <ExternalLinkIcon className="mr-2" size={20} />
                             <span>Live</span>

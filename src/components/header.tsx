@@ -13,21 +13,21 @@ const navItems = [
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full brutal-border-4 border-l-0 border-r-0 border-t-0 bg-background">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between mx-auto px-4 md:px-6">
-        <a href="#about" className="flex items-center gap-2 transition-opacity hover:opacity-80">
-          <Code2 className="h-6 w-6 text-primary" />
-          <span className="font-headline text-lg font-bold tracking-tight">Chit Swe</span>
+        <a href="#about" className="flex items-center gap-2 transition-none hover:translate-x-[2px] hover:translate-y-[2px]">
+          <Code2 className="h-6 w-6 text-foreground" />
+          <span className="font-mono text-xl font-bold uppercase tracking-tight">Chit Swe</span>
         </a>
 
         <div className="flex items-center gap-4">
           <nav className="hidden lg:flex">
-            <ul className="flex items-center gap-6 text-sm">
+            <ul className="flex items-center gap-2 text-sm">
               {navItems.map((item) => (
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="font-medium text-muted-foreground transition-colors hover:text-primary"
+                    className="font-mono uppercase tracking-widest text-xs font-bold text-foreground transition-none hover:bg-accent-yellow hover:text-black px-3 py-2 brutal-border"
                   >
                     {item.label}
                   </a>

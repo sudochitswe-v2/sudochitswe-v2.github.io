@@ -11,26 +11,26 @@ export default function Contact() {
         <div className="grid gap-12 lg:grid-cols-3 lg:gap-8 max-w-6xl mx-auto">
           {/* Info side */}
           <div className="space-y-6 lg:col-span-1">
-            <div className="space-y-2">
-              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
-                Contact Me
+            <div className="space-y-4">
+              <h2 className="font-mono text-4xl font-bold tracking-tighter uppercase sm:text-5xl text-foreground">
+                [07] Contact Me
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-foreground font-medium md:text-xl">
                 Feel free to reach out for collaborations, project inquiries, or just to connect!
               </p>
             </div>
 
             <div className="space-y-4">
-              <Card className="border border-border/50">
+              <Card className="brutal-border bg-accent-yellow transition-none brutal-hover brutal-shadow">
                 <CardContent className="flex items-center gap-4 p-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <div className="flex h-10 w-10 items-center justify-center brutal-border bg-white text-black">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-muted-foreground">Email</p>
+                    <p className="text-xs font-bold font-mono uppercase text-black">Email</p>
                     <a
                       href={`mailto:${PROFILE_DATA.contact.email}`}
-                      className="text-sm font-semibold hover:text-primary transition-colors"
+                      className="text-sm font-bold font-mono text-black hover:underline"
                     >
                       {PROFILE_DATA.contact.email}
                     </a>
@@ -38,52 +38,52 @@ export default function Contact() {
                 </CardContent>
               </Card>
 
-              <Card className="border border-border/50">
+              <Card className="brutal-border bg-accent-pink transition-none brutal-hover brutal-shadow">
                 <CardContent className="flex items-center gap-4 p-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <div className="flex h-10 w-10 items-center justify-center brutal-border bg-white text-black">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-muted-foreground">Status & Location</p>
-                    <p className="text-sm font-semibold">Available for Remote & On-site</p>
+                    <p className="text-xs font-bold font-mono uppercase text-white">Status & Location</p>
+                    <p className="text-sm font-bold font-mono text-white">Available for Remote & On-site</p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border border-border/50">
+              <Card className="brutal-border bg-accent-green transition-none brutal-hover brutal-shadow">
                 <CardContent className="flex items-center gap-4 p-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <div className="flex h-10 w-10 items-center justify-center brutal-border bg-white text-black">
                     <MessageSquare className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-muted-foreground">Social Connect</p>
-                    <div className="flex gap-4 pt-1">
+                    <p className="text-xs font-bold font-mono uppercase text-black">Social Connect</p>
+                    <div className="flex gap-4 pt-2">
                       <a
                         href={PROFILE_DATA.socialLinks.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="text-black hover:text-white transition-none"
                         aria-label="GitHub"
                       >
-                        <SiGithub size={18} />
+                        <SiGithub size={20} />
                       </a>
                       <a
                         href={PROFILE_DATA.socialLinks.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="text-black hover:text-white transition-none"
                         aria-label="LinkedIn"
                       >
-                        <Linkedin size={18} />
+                        <Linkedin size={20} />
                       </a>
                       <a
                         href={PROFILE_DATA.socialLinks.mastodon}
                         target="_blank"
                         rel="me"
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="text-black hover:text-white transition-none"
                         aria-label="Mastodon"
                       >
-                        <SiMastodon size={18} />
+                        <SiMastodon size={20} />
                       </a>
                     </div>
                   </div>

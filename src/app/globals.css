@@ -3,85 +3,98 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 6rem;
   overflow-x: clip;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   overflow-x: clip;
 }
 
 @layer base {
   :root {
-    --background: 0 0% 94%; /* Light gray #F0F0F0 */
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --background: 50 100% 97%; /* Warm off-white #FFFDF0 */
+    --foreground: 0 0% 10%; /* Near-black #1A1A1A */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 0 0% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 275 100% 25%; /* Indigo #4B0082 */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 273 100% 50%; /* Violet #8F00FF */
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 275 100% 25%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 275 100% 70%;
-    --primary-foreground: 275 100% 15%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 273 100% 60%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 273 100% 60%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 0% 10%; /* Black — primary actions */
+    --primary-foreground: 50 100% 97%;
+    --secondary: 50 20% 93%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 50 20% 93%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 54 100% 50%; /* Electric yellow #FFE600 */
+    --accent-foreground: 0 0% 10%;
+    --destructive: 345 100% 60%; /* Hot pink #FF2D6B */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 10%; /* Black borders */
+    --input: 0 0% 10%;
+    --ring: 0 0% 10%;
+    --chart-1: 54 100% 50%;
+    --chart-2: 148 100% 50%;
+    --chart-3: 345 100% 60%;
+    --chart-4: 210 100% 56%;
+    --chart-5: 30 100% 50%;
+    --radius: 0px;
+
+    /* Brutalist accent palette */
+    --brutal-yellow: 54 100% 50%; /* #FFE600 */
+    --brutal-pink: 345 100% 60%; /* #FF2D6B */
+    --brutal-green: 148 100% 50%; /* #00FF66 */
+    --brutal-blue: 210 100% 56%; /* #2196F3 */
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 10%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 54 100% 50%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 10%;
+    --sidebar-ring: 0 0% 10%;
+  }
+
+  .dark {
+    --background: 0 0% 5%; /* Near-black #0D0D0D */
+    --foreground: 50 20% 96%; /* Off-white #F5F5F0 */
+    --card: 0 0% 10%; /* Dark gray #1A1A1A */
+    --card-foreground: 50 20% 96%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 50 20% 96%;
+    --primary: 50 20% 96%; /* White — primary actions in dark */
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 50 20% 96%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 54 100% 50%; /* Same electric yellow */
+    --accent-foreground: 0 0% 10%;
+    --destructive: 345 100% 60%; /* Same hot pink */
+    --destructive-foreground: 0 0% 100%;
+    --border: 50 20% 96%; /* White borders in dark */
+    --input: 50 20% 96%;
+    --ring: 50 20% 96%;
+    --chart-1: 54 100% 50%;
+    --chart-2: 148 100% 50%;
+    --chart-3: 345 100% 60%;
+    --chart-4: 210 100% 56%;
+    --chart-5: 30 100% 50%;
+
+    --brutal-yellow: 54 100% 50%;
+    --brutal-pink: 345 100% 60%;
+    --brutal-green: 148 100% 50%;
+    --brutal-blue: 210 100% 56%;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 50 20% 96%;
+    --sidebar-primary: 50 20% 96%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 54 100% 50%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 50 20% 96%;
+    --sidebar-ring: 50 20% 96%;
   }
 }
 
@@ -91,5 +104,49 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* ── Brutalist Utility Classes ── */
+@layer utilities {
+  .brutal-border {
+    @apply border-2 border-foreground;
+  }
+  .brutal-border-3 {
+    @apply border-[3px] border-foreground;
+  }
+  .brutal-border-4 {
+    border-width: 4px;
+    @apply border-foreground;
+  }
+  .brutal-shadow-sm {
+    box-shadow: 3px 3px 0px 0px hsl(var(--foreground));
+  }
+  .brutal-shadow {
+    box-shadow: 4px 4px 0px 0px hsl(var(--foreground));
+  }
+  .brutal-shadow-md {
+    box-shadow: 6px 6px 0px 0px hsl(var(--foreground));
+  }
+  .brutal-shadow-lg {
+    box-shadow: 8px 8px 0px 0px hsl(var(--foreground));
+  }
+  .brutal-hover {
+    @apply transition-all duration-100;
+  }
+  .brutal-hover:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px hsl(var(--foreground));
+  }
+  .brutal-hover:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
+  .brutal-press {
+    @apply transition-all duration-75;
+  }
+  .brutal-press:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
   }
 }
