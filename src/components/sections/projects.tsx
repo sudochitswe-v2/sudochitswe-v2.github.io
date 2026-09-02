@@ -29,13 +29,20 @@ export default function Projects() {
 
           <TabsContent value="all" className="w-full">
             <div className="mx-auto mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:max-w-5xl">
-              {COMPANY_PROJECTS_DATA.map((project) => (
+              {[...COMPANY_PROJECTS_DATA]
+                .sort((a, b) => {
+                  const getVal = (d?: string) => (!d || d.toLowerCase() === 'present') ? Infinity : new Date(d).getTime();
+                  return getVal(b.endDate) - getVal(a.endDate);
+                })
+                .map((project) => (
                 <ProjectCard
                   key={project.id}
                   title={project.title}
                   description={project.description}
                   technologies={project.technologies}
                   imageUrlId={project.imageUrlId}
+                  startDate={project.startDate}
+                  endDate={project.endDate}
                 />
               ))}
               {PERSONAL_PROJECTS_DATA.map((project) => (
@@ -54,13 +61,20 @@ export default function Projects() {
 
           <TabsContent value="company" className="w-full">
             <div className="mx-auto mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:max-w-5xl">
-              {COMPANY_PROJECTS_DATA.map((project) => (
+              {[...COMPANY_PROJECTS_DATA]
+                .sort((a, b) => {
+                  const getVal = (d?: string) => (!d || d.toLowerCase() === 'present') ? Infinity : new Date(d).getTime();
+                  return getVal(b.endDate) - getVal(a.endDate);
+                })
+                .map((project) => (
                 <ProjectCard
                   key={project.id}
                   title={project.title}
                   description={project.description}
                   technologies={project.technologies}
                   imageUrlId={project.imageUrlId}
+                  startDate={project.startDate}
+                  endDate={project.endDate}
                 />
               ))}
             </div>

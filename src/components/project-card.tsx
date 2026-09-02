@@ -15,6 +15,8 @@ type ProjectCardProps = {
   description: string;
   technologies: string[];
   imageUrlId?: string; // Make this optional
+  startDate?: string;
+  endDate?: string;
 };
 
 const getImageById = (id?: string): ImagePlaceholder | undefined => {
@@ -22,12 +24,17 @@ const getImageById = (id?: string): ImagePlaceholder | undefined => {
   return PlaceHolderImages.find((img) => img.id === id);
 };
 
-export function ProjectCard({ title, description, technologies, imageUrlId }: ProjectCardProps) {
+export function ProjectCard({ title, description, technologies, imageUrlId, startDate, endDate }: ProjectCardProps) {
   const image = getImageById(imageUrlId);
   return (
     <Card className="flex h-full flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
       <CardHeader>
         <CardTitle className="font-headline text-2xl">{title}</CardTitle>
+        {(startDate || endDate) && (
+          <p className="text-sm font-medium text-muted-foreground mt-2">
+            {startDate} - {endDate}
+          </p>
+        )}
       </CardHeader>
       <CardContent className="flex-grow space-y-4">
         {image?.imageUrl ? (

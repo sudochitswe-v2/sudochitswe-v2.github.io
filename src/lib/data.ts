@@ -110,6 +110,8 @@ export const COMPANY_PROJECTS_DATA = [
       'A comprehensive social and utility platform for golfers in Myanmar, featuring course information, event management, and community features.',
     technologies: ['.NET Core', 'React.js', 'Flutter', 'Dart', 'Firebase', 'MSSQL'],
     imageUrlId: 'project1',
+    startDate: 'Feb 2022',
+    endDate: ' Jan 2023',
   },
   {
     id: 'eload-manager',
@@ -118,6 +120,8 @@ export const COMPANY_PROJECTS_DATA = [
       'A robust system for managing and tracking electronic mobile top-ups, designed for distributors and retailers.',
     technologies: ['.NET Core', 'React.js', 'Flutter', 'Dart', 'Firebase', 'MSSQL'],
     imageUrlId: 'project2',
+    startDate: 'Jan 2023',
+    endDate: 'Jun 2023',
   },
   {
     id: 'c4e-rewards',
@@ -126,6 +130,8 @@ export const COMPANY_PROJECTS_DATA = [
       'A mobile application for a customer loyalty and rewards program, enhancing customer engagement and retention.',
     technologies: ['Flutter', 'Dart', 'Odoo'],
     imageUrlId: 'project3',
+    startDate: 'Mar 2023',
+    endDate: 'Feb 2024',
   },
   {
     id: 'bcms2',
@@ -134,6 +140,8 @@ export const COMPANY_PROJECTS_DATA = [
       'An outsourced project at GUI Solutions Pte Ltd (Singapore) that aims to modernize the Buffet Catering Management System from monolithic application into a cloud-native micro-services application over the azure.',
     technologies: ['C#', '.NET Core', 'WinForm', 'MSSQL', 'Azure', 'Docker', 'Blazor'],
     imageUrlId: 'project4',
+    startDate: 'Jun 2023',
+    endDate: 'April 2025',
   },
 ];
 
