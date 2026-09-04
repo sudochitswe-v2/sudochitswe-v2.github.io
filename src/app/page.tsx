@@ -17,10 +17,10 @@ export default function Home() {
       <main className="flex-1 overflow-x-clip">
         <Hero />
         <ScrollReveal direction="up" delay={0.1}>
-          <Experience />
+          <Skills />
         </ScrollReveal>
         <ScrollReveal direction="up" delay={0.1}>
-          <Skills />
+          <Experience />
         </ScrollReveal>
         <ScrollReveal direction="up" delay={0.1}>
           <Projects />
