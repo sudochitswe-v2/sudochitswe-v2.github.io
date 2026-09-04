@@ -8,13 +8,10 @@ export default function Certificates() {
     <section id="certificates" className="w-full bg-muted/50 py-12 md:py-24 lg:py-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">
-              Certificates
+          <div className="space-y-2 mb-8">
+            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl text-neon-yellow retro-glow uppercase">
+                 CERTIFICATES   
             </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Professional diplomas, technical certifications, and verified achievements.
-            </p>
           </div>
         </div>
 
@@ -22,30 +19,30 @@ export default function Certificates() {
           {CERTIFICATES_DATA.map((cert) => (
             <Card
               key={cert.id}
-              className="group relative flex flex-col justify-between overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-card border border-border/50"
+              className="group relative flex flex-col justify-between overflow-hidden retro-panel p-4 bg-[#c0c0c0] transition-none"
             >
               <CardHeader className="space-y-3 pb-3">
                 <div className="flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <div className="flex h-12 w-12 items-center justify-center border-4 border-black border-r-white border-b-white bg-[#000080] text-white">
                     <Award className="h-6 w-6" />
                   </div>
-                  <Badge variant="outline" className="flex items-center gap-1 text-xs">
+                  <Badge variant="default" className="flex items-center gap-1 text-xs px-2 bg-black border-neon-yellow text-neon-yellow font-body">
                     <Calendar className="h-3 w-3" />
                     {cert.year}
                   </Badge>
                 </div>
                 <div>
-                  <CardTitle className="font-headline text-xl font-bold tracking-tight">
+                  <CardTitle className="font-headline text-xl font-bold tracking-tight text-black uppercase">
                     {cert.title}
                   </CardTitle>
-                  <p className="mt-1 text-sm font-medium text-accent">
+                  <p className="mt-1 text-sm font-bold text-[#800080] uppercase">
                     {cert.issuer}
                   </p>
                 </div>
               </CardHeader>
 
               <CardContent className="space-y-4 pt-0">
-                <CardDescription className="text-sm text-muted-foreground leading-relaxed">
+                <CardDescription className="text-sm font-body text-star-white font-bold">
                   {cert.description}
                 </CardDescription>
 
@@ -68,9 +65,9 @@ export default function Certificates() {
                       }
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-md border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                      className="retro-bevel-btn inline-flex items-center gap-1.5 px-3 py-1.5 text-xs text-black uppercase"
                     >
-                      <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                      <CheckCircle2 className="h-4 w-4" color="green" />
                       <span>Verify</span>
                       <ExternalLink className="h-3.5 w-3.5" />
                     </a>

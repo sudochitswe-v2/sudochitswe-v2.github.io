@@ -109,55 +109,39 @@ export default function AIChatWidget() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
       {isOpen && (
-        <div className="mb-4 flex h-[500px] w-[350px] sm:w-[400px] flex-col overflow-hidden rounded-2xl border border-purple-500/20 bg-background/95 shadow-[0_0_40px_rgba(168,85,247,0.15)] backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all animate-in slide-in-from-bottom-5 pointer-events-auto">
+        <div className="mb-4 flex h-[400px] w-[350px] sm:w-[400px] flex-col overflow-hidden retro-panel p-1 bg-[#c0c0c0] transition-none pointer-events-auto">
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-purple-500/10 bg-muted/30 p-4">
-            <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 text-white shadow-sm">
-                <Sparkles className="h-4 w-4" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-sm">Assistant</h3>
-                <p className="text-xs text-muted-foreground">Ask me anything</p>
-              </div>
+          <div className="bg-[#000080] p-1 flex justify-between items-center border-b-2 border-border-bevel">
+            <div className="flex gap-2 items-center">
+                <Bot className="h-4 w-4 text-white" />
+                <h3 className="font-bold text-white text-sm uppercase">AI_CHAT.EXE</h3>
             </div>
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="h-8 w-8 rounded-full">
-              <X className="h-4 w-4" />
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="h-5 w-5 bg-[#c0c0c0] border-2 border-white border-r-[#808080] border-b-[#808080] rounded-none hover:bg-[#c0c0c0]">
+              <X className="h-3 w-3 text-black font-bold" />
             </Button>
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-black font-body text-neon-cyan retro-scanlines relative border-4 border-black border-r-white border-b-white">
             {messages.map((msg, idx) => (
               <div
                 key={idx}
                 className={cn(
-                  "flex gap-3 max-w-[85%]",
-                  msg.role === 'user' ? "ml-auto flex-row-reverse" : ""
+                  "flex flex-col gap-1 w-full",
                 )}
               >
-                <div className={cn(
-                  "flex h-8 w-8 shrink-0 items-center justify-center rounded-full shadow-sm",
-                  msg.role === 'user' ? "bg-secondary text-secondary-foreground" : "bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 text-white"
-                )}>
-                  {msg.role === 'user' ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
+                <div className="text-neon-lime text-xs font-bold uppercase">
+                  {msg.role === 'user' ? 'USER >' : 'SYSTEM >'}
                 </div>
-                <div className={cn(
-                  "rounded-2xl px-4 py-2 text-sm",
-                  msg.role === 'user'
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md"
-                    : "bg-muted/50 border border-purple-500/10 shadow-sm prose prose-sm dark:prose-invert max-w-none"
-                )}>
+                <div className="text-sm break-words whitespace-pre-wrap">
                   {msg.role === 'user' ? (
                     msg.content
                   ) : msg.content === '' && isLoading ? (
-                    <div className="flex items-center h-5">
-                      <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
-                    </div>
+                    <span className="animate-blink">_</span>
                   ) : (
                     <ReactMarkdown
                       components={{
-                        a: ({ node, ...props }) => <a {...props} target="_blank" rel="noopener noreferrer" className="text-primary underline" />,
+                        a: ({ node, ...props }) => <a {...props} target="_blank" rel="noopener noreferrer" className="text-neon-yellow underline" />,
                         p: ({ node, ...props }) => <p {...props} className="mb-2 last:mb-0" />
                       }}
                     >
@@ -170,48 +154,27 @@ export default function AIChatWidget() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Suggested Questions */}
-          {messages.length === 1 && (
-            <div className="flex flex-wrap gap-2 p-4 pt-0">
-              {suggestedQuestions.map((q, i) => (
-                <button
-                  key={i}
-                  onClick={() => handleSuggestedQuestion(q)}
-                  className="rounded-full border bg-background px-3 py-1 text-xs text-muted-foreground hover:bg-muted transition-colors text-left"
-                >
-                  {q}
-                </button>
-              ))}
-            </div>
-          )}
-
           {/* Input Area */}
-          <div className="border-t border-purple-500/10 p-4 bg-background/50 backdrop-blur-sm">
+          <div className="border-t-2 border-[#808080] bg-[#c0c0c0] pt-2 mt-2">
             <div className="flex items-center gap-2">
+              <span className="text-black font-bold font-body">&gt;</span>
               <input
                 type="text"
-                placeholder="Type your question..."
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="flex-1 rounded-full border border-purple-500/20 bg-muted/50 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all"
+                className="flex-1 bg-white border-2 border-[#808080] border-t-black border-l-black px-2 py-1 text-sm focus:outline-none font-body text-black"
                 disabled={isLoading}
               />
               <Button
                 id="chat-send-btn"
-                size="icon"
-                className="h-10 w-10 rounded-full shrink-0 bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90 shadow-md transition-all"
+                className="retro-bevel-btn px-2 py-1 h-auto text-xs"
                 onClick={handleSend}
                 disabled={!input.trim() || isLoading}
               >
-                <Send className="h-4 w-4 ml-1" />
+                [ENTER]
               </Button>
             </div>
-          </div>
-
-          {/* Footer branding */}
-          <div className="pb-2 text-center">
-            <span className="text-[10px] text-muted-foreground/60">Powered by Gemini AI</span>
           </div>
         </div>
       )}
@@ -219,25 +182,11 @@ export default function AIChatWidget() {
       {/* Floating Button */}
       {!isOpen && (
         <div className="relative flex flex-col items-end gap-3 pointer-events-auto">
-
-          {/* Attention Grabber Popup */}
-          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-700 fill-mode-both rounded-2xl rounded-br-sm bg-background border border-purple-500/20 px-4 py-2 text-sm shadow-lg">
-            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent font-medium">
-              ✨ Ask AI about my experience!
-            </span>
-          </div>
-
           <button
             onClick={() => setIsOpen(true)}
-            className="group relative flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none overflow-hidden"
+            className="retro-bevel-btn flex h-12 w-12 items-center justify-center rounded-none shadow-none text-black"
           >
-            {/* Animated glowing background (Gemini/Siri style) */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 animate-pulse opacity-90 group-hover:opacity-100 transition-opacity"></div>
-            
-            {/* Spinning light effect */}
-            <div className="absolute inset-[-50%] animate-[spin_3s_linear_infinite] bg-gradient-to-tr from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-            <Sparkles className="relative z-10 h-6 w-6 text-white drop-shadow-md" />
+            <Bot className="h-6 w-6" />
           </button>
         </div>
       )}

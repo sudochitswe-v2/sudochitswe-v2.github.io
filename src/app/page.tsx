@@ -12,25 +12,31 @@ import ScrollReveal from '@/components/ui/scroll-reveal';
 
 export default function Home() {
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <div className="flex min-h-dvh flex-col bg-bg-void retro-scanlines relative">
       <Header />
-      <main className="flex-1 overflow-x-clip">
+      <main className="flex-1 overflow-x-clip relative z-10">
         <Hero />
+        <hr className="retro-divider" />
         <ScrollReveal direction="up" delay={0.1}>
           <Skills />
         </ScrollReveal>
+        <hr className="retro-divider" />
         <ScrollReveal direction="up" delay={0.1}>
           <Experience />
         </ScrollReveal>
+        <hr className="retro-divider" />
         <ScrollReveal direction="up" delay={0.1}>
           <Projects />
         </ScrollReveal>
+        <hr className="retro-divider" />
         <ScrollReveal direction="up" delay={0.1}>
           <Certificates />
         </ScrollReveal>
+        <hr className="retro-divider" />
         <ScrollReveal direction="up" delay={0.1}>
           <Education />
         </ScrollReveal>
+        <hr className="retro-divider" />
         <ScrollReveal direction="up" delay={0.1}>
           <Contact />
         </ScrollReveal>

@@ -79,13 +79,13 @@ You can reach me at: ${email}`;
   }
 
   return (
-    <div className="mx-auto w-full max-w-screen-md">
-       <div className="mb-8 text-center">
-         <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">
-           Get in Touch
+    <div className="mx-auto w-full max-w-screen-md retro-panel bg-[#c0c0c0] p-6 text-black">
+       <div className="mb-8 border-b-2 border-[#808080] pb-2">
+         <h2 className="font-headline text-2xl font-bold tracking-tighter sm:text-4xl uppercase">
+           Compose Message
          </h2>
-         <p className="mt-2 text-muted-foreground md:text-xl/relaxed">
-           I&apos;m open to discussing new projects and opportunities.
+         <p className="mt-2 text-[#000080] font-bold">
+           &gt; SYSTEM IS READY FOR INPUT...
          </p>
        </div>
       <Form {...form}>
@@ -96,7 +96,7 @@ You can reach me at: ${email}`;
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Your Name</FormLabel>
+                  <FormLabel className="font-bold text-black uppercase">Name:</FormLabel>
                   <FormControl>
                     <Input placeholder="John Doe" {...field} />
                   </FormControl>
@@ -109,7 +109,7 @@ You can reach me at: ${email}`;
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Your Email</FormLabel>
+                  <FormLabel className="font-bold text-black uppercase">Email:</FormLabel>
                   <FormControl>
                     <Input placeholder="john.doe@example.com" {...field} />
                   </FormControl>
@@ -123,7 +123,7 @@ You can reach me at: ${email}`;
             name="subject"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Subject</FormLabel>
+                <FormLabel className="font-bold text-black uppercase">Subject:</FormLabel>
                 <FormControl>
                   <Input placeholder="Project Proposal" {...field} />
                 </FormControl>
@@ -136,7 +136,7 @@ You can reach me at: ${email}`;
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel className="font-bold text-black uppercase">Message:</FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="Tell me about your project..."
@@ -148,9 +148,9 @@ You can reach me at: ${email}`;
               </FormItem>
             )}
           />
-          <div className="text-center">
-            <Button type="submit" size="lg">
-              Send Message <Send className="ml-2 h-5 w-5" />
+          <div className="text-right border-t-2 border-white pt-4">
+            <Button type="submit" size="lg" className="w-full sm:w-auto">
+              [ SEND DATA ]
             </Button>
           </div>
         </form>

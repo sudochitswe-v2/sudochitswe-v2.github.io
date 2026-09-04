@@ -17,9 +17,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Space Grotesk', 'sans-serif'],
-        code: ['monospace'],
+        body: ['var(--font-share-tech-mono)', 'monospace'],
+        headline: ['var(--font-vt323)', 'monospace'],
+        code: ['var(--font-share-tech-mono)', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -55,6 +55,15 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        'bg-void': '#040411',
+        'bg-panel': '#0a0a2e',
+        'neon-cyan': '#00FFFF',
+        'neon-magenta': '#FF00FF',
+        'neon-lime': '#00FF41',
+        'neon-yellow': '#FFE600',
+        'star-white': '#E0E0FF',
+        'dim-text': '#9090BB',
+        'border-bevel': '#4040AA',
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',
@@ -95,10 +104,20 @@ export default {
             height: '0',
           },
         },
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
+        glow: {
+          '0%, 100%': { textShadow: '0 0 5px var(--tw-colors-neon-cyan), 0 0 10px var(--tw-colors-neon-cyan)' },
+          '50%': { textShadow: '0 0 20px var(--tw-colors-neon-cyan), 0 0 30px var(--tw-colors-neon-cyan)' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'blink': 'blink 1s step-end infinite',
+        'glow': 'glow 2s ease-in-out infinite',
       },
     },
   },
