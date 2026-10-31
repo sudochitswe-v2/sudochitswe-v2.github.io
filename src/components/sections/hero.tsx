@@ -13,7 +13,7 @@ import ScrollReveal from '@/components/ui/scroll-reveal';
 const ThreeCanvas = dynamic(() => import('@/components/ui/three-canvas'), {
   ssr: false,
   loading: () => (
-    <div className="h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] lg:h-[450px] lg:w-[450px] animate-pulse rounded-full bg-primary/10" />
+    <div className="h-[340px] w-[340px] sm:h-[440px] sm:w-[440px] lg:h-[500px] lg:w-[500px] animate-pulse rounded-none bg-muted/20" />
   ),
 });
 
@@ -77,7 +77,7 @@ export default function Hero() {
           </ScrollReveal>
 
           <ScrollReveal direction="right" duration={0.8} delay={0.2}>
-            <div className="relative flex items-center justify-center p-8">
+            <div className="relative flex items-center justify-center p-6 sm:p-10 lg:p-12">
               {/* 3D Three.js Interactive Canvas */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-auto">
                 <ThreeCanvas />
