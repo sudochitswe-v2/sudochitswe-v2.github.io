@@ -115,8 +115,8 @@ export default function SovietHero() {
                 <SovietThreeCanvas />
               </div>
 
-              {/* Cadre Official Identity Pass (Pinned to Bottom-Right corner, safely away from left column buttons) */}
-              <div className="absolute bottom-0 right-0 sm:bottom-2 sm:right-2 lg:right-4 z-20 p-2 bg-card border-3 border-[#B81414] shadow-[6px_6px_0px_0px_#7A0000] rotate-[3deg] hover:rotate-0 transition-transform duration-300 w-32 sm:w-36 lg:w-40 select-none">
+              {/* Cadre Official Identity Pass (Pinned to Bottom-Right corner, elevated slightly) */}
+              <div className="absolute bottom-8 right-0 sm:bottom-10 sm:right-2 lg:right-4 z-20 p-2 bg-card border-3 border-[#B81414] shadow-[6px_6px_0px_0px_#7A0000] rotate-[3deg] hover:rotate-0 transition-transform duration-300 w-32 sm:w-36 lg:w-40 select-none">
                 <div className="bg-[#B81414] text-[#FFC82C] text-center text-[9px] sm:text-[10px] font-headline font-bold py-0.5 uppercase tracking-widest border border-[#FFC82C]">
                   ★ CADRE PASS ★
                 </div>
