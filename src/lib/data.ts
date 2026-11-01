@@ -55,14 +55,14 @@ export const THEME_PROFILES: Record<ThemeId, Partial<ProfileData>> = {
     title: 'Code Necromancer & Full Stack Engineer',
     introduction:
       'Crafting resilient, high-throughput backend infrastructure, robust distributed microservices, and engaging web applications.',
-    avatarUrl: '/images/profile.png',
+    avatarUrl: '/images/halloween/profile.png',
   },
   christmas: {
     name: 'Chit Swe',
     title: 'Full Stack Architect & Engineer',
     introduction:
       'Architecting resilient distributed software systems, high-performance web platforms, and reliable digital experiences worldwide.',
-    avatarUrl: '/images/profile.png',
+    avatarUrl: '/images/christmas/profile.png',
   },
 };
 
