@@ -113,12 +113,6 @@ export default function HalloweenHero() {
                     />
                   </div>
                 </div>
-
-                {/* Carved Stone Status Inscription */}
-                <div className="stone-btn absolute -top-2 -right-2 z-30 flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono text-stone-300 pointer-events-none">
-                  <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-ping" />
-                  <span>Coven Online</span>
-                </div>
               </div>
             </div>
           </ScrollReveal>

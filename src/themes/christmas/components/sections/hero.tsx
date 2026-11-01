@@ -126,12 +126,6 @@ export default function ChristmasHero() {
                     />
                   </div>
                 </div>
-
-                {/* Floating Workshop Status Ribbon */}
-                <div className="absolute -top-2 -right-2 z-30 flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-950/95 border border-yellow-400/50 shadow-[0_0_12px_rgba(248,178,41,0.5)] text-[10px] font-mono text-yellow-300 pointer-events-none">
-                  <span className="h-1.5 w-1.5 rounded-full bg-yellow-400 animate-ping" />
-                  <span>Available</span>
-                </div>
               </div>
             </div>
           </ScrollReveal>
