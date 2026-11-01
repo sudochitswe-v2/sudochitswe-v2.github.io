@@ -2,8 +2,7 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
-  output: 'export', // Enable static exports for GitHub Pages
-  distDir: 'out', // Specify the output directory
+  output: 'export', // Enable static exports for GitHub Pages (exports to 'out' by default)
   trailingSlash: true, // Add trailing slashes to URLs for GitHub Pages compatibility
   images: {
     unoptimized: true, // Disable image optimization for static export
