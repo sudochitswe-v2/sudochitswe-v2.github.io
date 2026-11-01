@@ -18,6 +18,11 @@ const RetroTheme = dynamic(() => import('./retro'), {
   loading: () => <ThemeLoadingFallback theme="retro" />,
 });
 
+const SovietTheme = dynamic(() => import('./soviet'), {
+  ssr: false,
+  loading: () => <ThemeLoadingFallback theme="soviet" />,
+});
+
 export const THEMES: ThemeMeta[] = [
   {
     id: 'modern',
@@ -43,15 +48,31 @@ export const THEMES: ThemeMeta[] = [
     icon: 'Terminal',
     accentColor: '#00FFFF',
   },
+  {
+    id: 'soviet',
+    name: 'Soviet Constructivist',
+    tagline: 'Propaganda & 3D Hammer/Sickle',
+    description: 'Constructivist avant-garde typography, 3D interactive golden Hammer & Sickle, and official state archive dossier.',
+    icon: 'Flame',
+    accentColor: '#B81414',
+  },
 ];
 
 export const THEME_COMPONENTS: Record<ThemeId, React.ComponentType> = {
   modern: ModernTheme,
   brutalism: BrutalismTheme,
   retro: RetroTheme,
+  soviet: SovietTheme,
 };
 
 function ThemeLoadingFallback({ theme }: { theme: ThemeId }) {
+  if (theme === 'soviet') {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#161413] text-[#FFC82C] font-headline text-xl font-bold uppercase tracking-widest border-8 border-[#B81414] m-4 animate-pulse">
+        ★ MOBILIZING COLLECTIVE ARSENAL... ★
+      </div>
+    );
+  }
   if (theme === 'retro') {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#040411] text-[#00FFFF] font-mono text-xl animate-pulse">

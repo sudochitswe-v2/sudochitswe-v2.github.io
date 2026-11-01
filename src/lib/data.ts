@@ -1,8 +1,12 @@
-export const PROFILE_DATA = {
+import type { ThemeId, ProfileData } from '@/types/portfolio';
+
+export const PROFILE_DATA: ProfileData = {
   name: 'Chit Swe',
   title: 'Full Stack Developer',
   introduction:
     'A passionate and responsible backend-focus Full Stack Developer with a strong aptitude for creative thinking and teamwork. Eager to learn new technologies and build innovative solutions.',
+  roleBadge: 'Full Stack Specialist',
+  dossierNumber: 'DEV-2026',
   contact: {
     email: 'chitswe.dev@gmail.com',
   },
@@ -12,6 +16,52 @@ export const PROFILE_DATA = {
     mastodon: "https://burma.social/@sudo_chitswe",
   },
 };
+
+export const THEME_PROFILES: Record<ThemeId, Partial<ProfileData>> = {
+  modern: {
+    name: 'Chit Swe',
+    title: 'Full Stack Developer',
+    roleBadge: 'Full Stack Specialist',
+  },
+  brutalism: {
+    name: 'CHIT SWE',
+    title: 'FULL STACK ENGINEER',
+    introduction:
+      'PRAGMATIC, BACKEND-FOCUSED SOFTWARE ENGINEER. BUILDING HIGH-THROUGHPUT ROBUST APPLICATIONS WITH C#, .NET CORE, AND MODERN FRONTENDS.',
+    roleBadge: '[VERIFIED ENGINEER]',
+  },
+  retro: {
+    name: 'Chit Swe',
+    title: 'Full Stack Developer // SysAdmin',
+    introduction:
+      'Backend hacker & full-stack architect dialing into high-throughput systems. Specializing in C#, .NET, Linux, and reactive web/mobile experiences.',
+    roleBadge: '[ROOT_ACCESS_GRANTED]',
+  },
+  soviet: {
+    name: 'Comrade Chit Swe',
+    title: 'Chief Engineer of Digital Infrastructure',
+    introduction:
+      'Honored specialist in distributed backend architecture and cloud systems for the collective. Laboring tirelessly to construct unbreakable, high-throughput computational machinery.',
+    roleBadge: '★ ORDER OF CODE EXCELLENCE ★',
+    dossierNumber: 'CCCP-DEV-2026',
+  },
+};
+
+export function getProfileData(theme: ThemeId = 'modern'): ProfileData {
+  const override = THEME_PROFILES[theme] || {};
+  return {
+    ...PROFILE_DATA,
+    ...override,
+    contact: {
+      ...PROFILE_DATA.contact,
+      ...(override.contact || {}),
+    },
+    socialLinks: {
+      ...PROFILE_DATA.socialLinks,
+      ...(override.socialLinks || {}),
+    },
+  };
+}
 
 export const SKILLS_BY_LEVEL = {
   Expert: [

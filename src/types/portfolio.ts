@@ -1,4 +1,4 @@
-export type ThemeId = 'modern' | 'brutalism' | 'retro';
+export type ThemeId = 'modern' | 'brutalism' | 'retro' | 'soviet';
 
 export interface ThemeMeta {
   id: ThemeId;
@@ -14,6 +14,8 @@ export interface ProfileData {
   name: string;
   title: string;
   introduction: string;
+  roleBadge?: string;
+  dossierNumber?: string;
   contact: {
     email: string;
   };

@@ -1,6 +1,6 @@
 'use client';
 
-import { PROFILE_DATA } from '@/lib/data';
+import { getProfileData } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { Button } from '@/themes/brutalism/ui/button';
@@ -18,6 +18,7 @@ const ThreeCanvas = dynamic(() => import('@/themes/brutalism/ui/three-canvas'), 
 });
 
 export default function Hero() {
+  const profile = getProfileData('brutalism');
   const profileImage = PlaceHolderImages.find((p) => p.id === 'profile');
 
   return (
@@ -28,16 +29,16 @@ export default function Hero() {
             <div className="flex flex-col justify-center space-y-6">
               <div>
                 <h1 className="font-mono text-5xl font-bold uppercase leading-none tracking-tighter text-black bg-accent-yellow inline-block px-4 py-2 brutal-border brutal-shadow sm:text-6xl md:text-7xl lg:text-8xl">
-                  {PROFILE_DATA.name}
+                  {profile.name}
                 </h1>
               </div>
               <div>
                 <h2 className="font-mono text-xl font-bold uppercase tracking-widest text-white bg-accent-pink px-4 py-2 inline-block brutal-border brutal-shadow sm:text-2xl">
-                  {PROFILE_DATA.title}
+                  {profile.title}
                 </h2>
               </div>
               <p className="max-w-[600px] text-foreground font-medium md:text-xl border-l-4 border-foreground pl-4 bg-card p-4 brutal-shadow-sm brutal-border">
-                {PROFILE_DATA.introduction}
+                {profile.introduction}
               </p>
               <div className="flex flex-col gap-4 sm:flex-row pt-2">
                 <Button asChild size="lg" className="brutal-shadow brutal-press">
@@ -58,17 +59,17 @@ export default function Hero() {
               </div>
               <div className="flex gap-4 pt-4">
                 <Button asChild variant="outline" size="icon" className="brutal-shadow brutal-press">
-                  <a href={PROFILE_DATA.socialLinks.github} target="_blank" rel="noopener noreferrer">
+                  <a href={profile.socialLinks.github} target="_blank" rel="noopener noreferrer">
                     <SiGithub color="currentColor" size={20} />
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="icon" className="brutal-shadow brutal-press">
-                  <a href={PROFILE_DATA.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
+                  <a href={profile.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
                     <Linkedin color="currentColor" size={20} />
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="icon" className="brutal-shadow brutal-press">
-                  <a href={PROFILE_DATA.socialLinks.mastodon} target="_blank" rel="me">
+                  <a href={profile.socialLinks.mastodon} target="_blank" rel="me">
                     <SiMastodon color="currentColor" size={20} />
                   </a>
                 </Button>

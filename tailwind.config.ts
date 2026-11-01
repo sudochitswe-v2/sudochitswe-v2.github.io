@@ -24,6 +24,7 @@ export default {
         code: ['var(--font-theme-code)', 'monospace'],
         vt323: ['VT323', 'monospace'],
         'share-tech': ['Share Tech Mono', 'monospace'],
+        russo: ['"Russo One"', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -63,6 +64,15 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+
+        // Soviet Constructivist Theme Palettes
+        'soviet-red': '#B81414',
+        'soviet-crimson': '#7A0000',
+        'soviet-gold': '#FFC82C',
+        'soviet-ochre': '#D99B00',
+        'soviet-paper': '#F4EBD9',
+        'soviet-dark': '#1A1715',
+        'soviet-iron': '#2D2825',
 
         // Retro Theme Palettes
         'bg-void': '#040411',

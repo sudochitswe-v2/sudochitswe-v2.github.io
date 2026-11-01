@@ -223,6 +223,61 @@ body {
     --font-theme-headline: 'VT323', monospace;
     --font-theme-code: 'Share Tech Mono', monospace;
   }
+
+  /* ── Soviet Constructivist Theme ── */
+  html[data-portfolio-theme="soviet"],
+  [data-portfolio-theme="soviet"] {
+    --background: 40 45% 91%; /* Aged propaganda parchment #F4EBD9 */
+    --foreground: 20 15% 10%; /* Deep charcoal black #1A1715 */
+    --card: 40 45% 96%; /* Lighter cream card */
+    --card-foreground: 20 15% 10%;
+    --popover: 40 45% 96%;
+    --popover-foreground: 20 15% 10%;
+    --primary: 0 80% 40%; /* Deep Soviet Red #B81414 */
+    --primary-foreground: 45 100% 58%; /* Soviet Gold #FFC82C */
+    --secondary: 40 30% 84%;
+    --secondary-foreground: 20 15% 10%;
+    --muted: 40 25% 82%;
+    --muted-foreground: 20 15% 35%;
+    --accent: 45 100% 58%; /* Soviet Gold #FFC82C */
+    --accent-foreground: 0 80% 30%;
+    --destructive: 0 90% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 75% 35%; /* Red border */
+    --input: 40 30% 85%;
+    --ring: 0 80% 40%;
+    --radius: 0px;
+
+    --font-theme-body: 'Inter', sans-serif;
+    --font-theme-headline: 'Russo One', sans-serif;
+    --font-theme-code: 'Space Mono', monospace;
+  }
+
+  html[data-portfolio-theme="soviet"].dark,
+  .dark[data-portfolio-theme="soviet"],
+  .dark [data-portfolio-theme="soviet"],
+  [data-portfolio-theme="soviet"].dark {
+    --background: 20 10% 8%; /* Industrial dark iron #161413 */
+    --foreground: 40 30% 92%; /* Warm off-white #F0ECE4 */
+    --card: 20 10% 13%; /* Iron plate card #262321 */
+    --card-foreground: 40 30% 92%;
+    --popover: 20 10% 13%;
+    --popover-foreground: 40 30% 92%;
+    --primary: 0 80% 42%; /* Soviet Red #C01515 */
+    --primary-foreground: 45 100% 58%; /* Soviet Gold #FFC82C */
+    --secondary: 20 10% 18%;
+    --secondary-foreground: 40 30% 92%;
+    --muted: 20 10% 20%;
+    --muted-foreground: 40 15% 65%;
+    --accent: 45 100% 58%; /* Soviet Gold #FFC82C */
+    --accent-foreground: 0 80% 20%;
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 70% 35%;
+    --input: 20 10% 20%;
+    --ring: 45 100% 58%;
+    --radius: 0px;
+  }
 }
 
 @layer base {
@@ -319,5 +374,55 @@ body {
     z-index: 50;
     background-size: 100% 2px, 3px 100%;
     pointer-events: none;
+  }
+}
+
+/* ── Soviet Constructivist Utility Classes ── */
+@layer utilities {
+  .soviet-star {
+    text-shadow: 0 0 10px rgba(255, 200, 44, 0.6);
+  }
+  .soviet-border {
+    border: 3px solid #B81414;
+  }
+  .soviet-border-gold {
+    border: 3px solid #FFC82C;
+  }
+  .soviet-banner {
+    background: linear-gradient(135deg, #B81414 0%, #7A0000 100%);
+    color: #FFC82C;
+  }
+  .soviet-panel {
+    border: 3px solid #B81414;
+    box-shadow: 5px 5px 0px 0px #7A0000;
+  }
+  .soviet-btn {
+    background: #B81414;
+    color: #FFC82C;
+    border: 2px solid #FFC82C;
+    box-shadow: 3px 3px 0px 0px #4A0000;
+    text-transform: uppercase;
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 0.05em;
+    transition: all 0.1s ease;
+  }
+  .soviet-btn:hover {
+    background: #FFC82C;
+    color: #7A0000;
+    border-color: #B81414;
+  }
+  .soviet-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+  .soviet-stamp {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    text-transform: uppercase;
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 0.1em;
+    border: 2px dashed #B81414;
+    color: #B81414;
+    transform: rotate(-1deg);
   }
 }

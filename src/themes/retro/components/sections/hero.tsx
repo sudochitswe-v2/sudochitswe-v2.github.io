@@ -1,6 +1,6 @@
 'use client';
 
-import { PROFILE_DATA } from '@/lib/data';
+import { getProfileData } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { Button } from '@/themes/retro/ui/button';
@@ -8,6 +8,7 @@ import { Mail, Download, Briefcase, Linkedin } from 'lucide-react';
 import { SiGithub, SiMastodon } from '@icons-pack/react-simple-icons';
 import ScrollReveal from '@/components/ui/scroll-reveal';
 export default function Hero() {
+  const profile = getProfileData('retro');
   const profileImage = PlaceHolderImages.find((p) => p.id === 'profile');
 
   return (
@@ -18,15 +19,15 @@ export default function Hero() {
           <ScrollReveal direction="left" duration={0.8}>
             <div className="flex flex-col justify-center space-y-4">
               <h2 className="font-headline text-2xl font-bold tracking-tight text-neon-yellow sm:text-3xl retro-glow uppercase">
-                {PROFILE_DATA.name}
+                {profile.name}
               </h2>
               <div className="inline-block retro-panel border-2 border-border-bevel p-2 bg-[#000080]">
                 <h3 className="font-headline font-bold text-neon-lime sm:text-xl uppercase">
-                    {PROFILE_DATA.title}  
+                    {profile.title}  
                 </h3>
               </div>
               <p className="max-w-[600px] text-star-white font-bold md:text-xl">
-                {PROFILE_DATA.introduction}
+                {profile.introduction}
               </p>
               <div className="flex flex-col gap-4 sm:flex-row pt-2">
                 <Button asChild size="lg" className="shadow-md">
@@ -47,17 +48,17 @@ export default function Hero() {
               </div>
               <div className="flex gap-4 pt-4">
                 <Button asChild variant="outline" size="icon" className="rounded-none">
-                  <a href={PROFILE_DATA.socialLinks.github} target="_blank" rel="noopener noreferrer">
+                  <a href={profile.socialLinks.github} target="_blank" rel="noopener noreferrer">
                     <SiGithub color="currentColor" size={20} />
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="icon" className="rounded-none">
-                  <a href={PROFILE_DATA.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
+                  <a href={profile.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
                     <Linkedin color="currentColor" size={20} />
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="icon" className="rounded-none">
-                  <a href={PROFILE_DATA.socialLinks.mastodon} target="_blank" rel="me">
+                  <a href={profile.socialLinks.mastodon} target="_blank" rel="me">
                     <SiMastodon color="currentColor" size={20} />
                   </a>
                 </Button>
