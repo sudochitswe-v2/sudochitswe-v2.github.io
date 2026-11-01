@@ -9,12 +9,14 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-theme-body, Arial, Helvetica, sans-serif);
   overflow-x: clip;
 }
 
 @layer base {
-  :root {
+  /* Default / Modern Theme */
+  :root,
+  [data-portfolio-theme="modern"] {
     --background: 0 0% 94%; /* Light gray #F0F0F0 */
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -48,8 +50,15 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --font-theme-body: 'Inter', Arial, Helvetica, sans-serif;
+    --font-theme-headline: 'Space Grotesk', sans-serif;
+    --font-theme-code: monospace;
   }
-  .dark {
+
+  .dark,
+  [data-portfolio-theme="modern"].dark,
+  .dark [data-portfolio-theme="modern"] {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
@@ -83,6 +92,137 @@ body {
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  /* ── Brutalism Theme ── */
+  html[data-portfolio-theme="brutalism"],
+  [data-portfolio-theme="brutalism"] {
+    --background: 50 100% 97%; /* Warm off-white #FFFDF0 */
+    --foreground: 0 0% 10%; /* Near-black #1A1A1A */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 0% 10%; /* Black */
+    --primary-foreground: 50 100% 97%;
+    --secondary: 50 20% 93%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 50 20% 93%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 54 100% 50%; /* Electric yellow #FFE600 */
+    --accent-foreground: 0 0% 10%;
+    --destructive: 345 100% 60%; /* Hot pink #FF2D6B */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 10%; /* Black borders */
+    --input: 0 0% 10%;
+    --ring: 0 0% 10%;
+    --radius: 0px;
+
+    /* Brutalist accent palette */
+    --brutal-yellow: 54 100% 50%;
+    --brutal-pink: 345 100% 60%;
+    --brutal-green: 148 100% 50%;
+    --brutal-blue: 210 100% 56%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 54 100% 50%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 10%;
+    --sidebar-ring: 0 0% 10%;
+
+    --font-theme-body: 'Inter', Arial, Helvetica, sans-serif;
+    --font-theme-headline: 'Space Mono', monospace;
+    --font-theme-code: 'Space Mono', monospace;
+  }
+
+  html[data-portfolio-theme="brutalism"].dark,
+  .dark[data-portfolio-theme="brutalism"],
+  .dark [data-portfolio-theme="brutalism"],
+  [data-portfolio-theme="brutalism"].dark {
+    --background: 0 0% 5%; /* Near-black #0D0D0D */
+    --foreground: 50 20% 96%; /* Off-white #F5F5F0 */
+    --card: 0 0% 10%; /* Dark gray #1A1A1A */
+    --card-foreground: 50 20% 96%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 50 20% 96%;
+    --primary: 50 20% 96%; /* White */
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 50 20% 96%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 54 100% 50%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 345 100% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 50 20% 96%;
+    --input: 50 20% 96%;
+    --ring: 50 20% 96%;
+
+    --brutal-yellow: 54 100% 50%;
+    --brutal-pink: 345 100% 60%;
+    --brutal-green: 148 100% 50%;
+    --brutal-blue: 210 100% 56%;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 50 20% 96%;
+    --sidebar-primary: 50 20% 96%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 54 100% 50%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 50 20% 96%;
+    --sidebar-ring: 50 20% 96%;
+  }
+
+  /* ── Retro 90s Theme ── */
+  html[data-portfolio-theme="retro"],
+  html[data-portfolio-theme="retro"].dark,
+  [data-portfolio-theme="retro"],
+  [data-portfolio-theme="retro"].dark,
+  .dark[data-portfolio-theme="retro"],
+  .dark [data-portfolio-theme="retro"] {
+    --background: 240 76% 4%; /* #040411 bg-void */
+    --foreground: 240 100% 94%; /* #e0e0ff star-white */
+    --card: 240 64% 11%; /* #0a0a2e bg-panel */
+    --card-foreground: 240 100% 94%;
+    --popover: 240 64% 11%;
+    --popover-foreground: 240 100% 94%;
+    --primary: 180 100% 50%; /* #00FFFF neon-cyan */
+    --primary-foreground: 240 76% 4%;
+    --secondary: 300 100% 50%; /* #FF00FF neon-magenta */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 64% 11%;
+    --muted-foreground: 240 26% 65%; /* #9090BB dim-text */
+    --accent: 120 100% 50%; /* #00FF41 neon-lime */
+    --accent-foreground: 0 0% 0%;
+    --destructive: 300 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 45% 46%; /* #4040AA border-bevel */
+    --input: 240 64% 11%;
+    --ring: 180 100% 50%;
+    --radius: 0px;
+
+    --chart-1: 180 100% 50%;
+    --chart-2: 300 100% 50%;
+    --chart-3: 120 100% 50%;
+    --chart-4: 54 100% 50%;
+    --chart-5: 0 100% 50%;
+
+    --sidebar-background: 240 76% 4%;
+    --sidebar-foreground: 240 100% 94%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 240 76% 4%;
+    --sidebar-accent: 240 64% 11%;
+    --sidebar-accent-foreground: 240 100% 94%;
+    --sidebar-border: 240 45% 46%;
+    --sidebar-ring: 180 100% 50%;
+
+    --font-theme-body: 'Share Tech Mono', monospace;
+    --font-theme-headline: 'VT323', monospace;
+    --font-theme-code: 'Share Tech Mono', monospace;
+  }
 }
 
 @layer base {
@@ -91,5 +231,93 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* ── Brutalist Utility Classes ── */
+@layer utilities {
+  .brutal-border {
+    @apply border-2 border-foreground;
+  }
+  .brutal-border-3 {
+    @apply border-[3px] border-foreground;
+  }
+  .brutal-border-4 {
+    border-width: 4px;
+    @apply border-foreground;
+  }
+  .brutal-shadow-sm {
+    box-shadow: 3px 3px 0px 0px hsl(var(--foreground));
+  }
+  .brutal-shadow {
+    box-shadow: 4px 4px 0px 0px hsl(var(--foreground));
+  }
+  .brutal-shadow-md {
+    box-shadow: 6px 6px 0px 0px hsl(var(--foreground));
+  }
+  .brutal-shadow-lg {
+    box-shadow: 8px 8px 0px 0px hsl(var(--foreground));
+  }
+  .brutal-hover {
+    @apply transition-all duration-100;
+  }
+  .brutal-hover:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px hsl(var(--foreground));
+  }
+  .brutal-hover:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
+  .brutal-press {
+    @apply transition-all duration-75;
+  }
+  .brutal-press:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
+}
+
+/* ── Retro 90s Utility Classes ── */
+@layer utilities {
+  .retro-glow {
+    text-shadow: 0 0 5px var(--tw-colors-neon-cyan), 0 0 10px var(--tw-colors-neon-cyan);
+  }
+
+  .retro-panel {
+    @apply bg-bg-panel border-2 border-border-bevel relative;
+    box-shadow: inset -2px -2px 0px 0px rgba(0,0,0,0.5), inset 2px 2px 0px 0px rgba(255,255,255,0.2);
+  }
+
+  .retro-bevel-btn {
+    @apply bg-[#c0c0c0] text-black border-2 border-[#fff] active:border-[#808080] active:border-r-[#fff] active:border-b-[#fff] active:pt-[2px] active:pl-[2px] relative transition-none font-bold uppercase;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+  }
+
+  .retro-bevel-btn:active {
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+  }
+
+  .retro-divider {
+    @apply h-1 w-full border-none my-8;
+    background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8B00FF);
+  }
+
+  .retro-scanlines::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 50;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
   }
 }

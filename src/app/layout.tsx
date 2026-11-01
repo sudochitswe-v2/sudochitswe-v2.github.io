@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
+import { PortfolioThemeProvider } from '@/context/portfolio-theme-context';
 import { PROFILE_DATA } from '@/lib/data';
 
 export const metadata: Metadata = {
@@ -80,8 +81,8 @@ export default function RootLayout({
     name: PROFILE_DATA.name,
     jobTitle: PROFILE_DATA.title,
     description: PROFILE_DATA.introduction,
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://sudochitswe-v2.github.io',
-    image: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://sudochitswe-v2.github.io'}/images/profile.png`,
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://sudochitswe-v2.github.io/portfolio',
+    image: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://sudochitswe-v2.github.io/portfolio'}/images/profile.png`,
     sameAs: [
       PROFILE_DATA.socialLinks.linkedin,
       PROFILE_DATA.socialLinks.github,
@@ -110,12 +111,36 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap"
           rel="stylesheet"
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
-          rel="stylesheet"
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var search = window.location.search;
+                  var match = search.match(/[?&]theme=([^&]+)/);
+                  var valid = ['modern', 'brutalism', 'retro'];
+                  var theme = null;
+                  if (match && valid.indexOf(match[1]) !== -1) {
+                    theme = match[1];
+                  } else {
+                    var savedMode = localStorage.getItem('portfolio-theme-mode');
+                    var savedTheme = localStorage.getItem('portfolio-theme');
+                    if (savedMode === 'manual' && savedTheme && valid.indexOf(savedTheme) !== -1) {
+                      theme = savedTheme;
+                    } else {
+                      theme = valid[Math.floor(Math.random() * valid.length)];
+                    }
+                  }
+                  if (theme) {
+                    document.documentElement.setAttribute('data-portfolio-theme', theme);
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
         />
         <script
           type="application/ld+json"
@@ -128,11 +153,12 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
         >
-          {children}
-          <Toaster />
+          <PortfolioThemeProvider>
+            {children}
+            <Toaster />
+          </PortfolioThemeProvider>
         </ThemeProvider>
       </body>
     </html>
   );
 }
-
