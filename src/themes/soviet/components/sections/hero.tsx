@@ -63,7 +63,7 @@ export default function SovietHero() {
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap gap-3 pt-3">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap pt-3">
                 <Button asChild size="lg">
                   <a href="#contact">
                     <Mail className="mr-2 h-5 w-5" /> TRANSMIT DISPATCH
@@ -115,12 +115,12 @@ export default function SovietHero() {
                 <SovietThreeCanvas />
               </div>
 
-              {/* Cadre Official Identity Pass (Pinned to Bottom-Right corner, elevated slightly) */}
-              <div className="absolute bottom-8 right-0 sm:bottom-10 sm:right-2 lg:right-4 z-20 p-2 bg-card border-3 border-[#B81414] shadow-[6px_6px_0px_0px_#7A0000] rotate-[3deg] hover:rotate-0 transition-transform duration-300 w-32 sm:w-36 lg:w-40 select-none">
+              {/* Cadre Official Identity Pass (Positioned rightwards so it clears #projects button) */}
+              <div className="absolute -bottom-4 left-10 sm:bottom-2 sm:left-24 lg:left-32 z-20 p-2 bg-card border-3 border-[#B81414] shadow-[6px_6px_0px_0px_#7A0000] rotate-[2deg] hover:rotate-0 transition-transform duration-300 w-36 sm:w-44 select-none">
                 <div className="bg-[#B81414] text-[#FFC82C] text-center text-[9px] sm:text-[10px] font-headline font-bold py-0.5 uppercase tracking-widest border border-[#FFC82C]">
                   ★ CADRE PASS ★
                 </div>
-                <div className="relative h-28 sm:h-36 lg:h-40 w-full overflow-hidden border border-[#B81414] my-1 bg-black/10">
+                <div className="relative h-32 sm:h-40 w-full overflow-hidden border border-[#B81414] my-1.5 bg-black/10">
                   <Image
                     src={avatarUrl}
                     alt="Portrait of Comrade Chit Swe"
