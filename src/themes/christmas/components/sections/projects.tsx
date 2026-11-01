@@ -5,30 +5,30 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/themes/christmas/ui/
 
 export default function ChristmasProjects() {
   return (
-    <section id="projects" className="w-full py-12 sm:py-20 bg-card/30 border-b-2 border-[#165B33]">
+    <section id="projects" className="w-full py-12 sm:py-20 border-b border-emerald-500/30 bg-[#061A0E]/60">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center space-y-3 mb-12">
-          <div className="inline-block px-3 py-1 bg-[#165B33] text-[#F8B229] text-xs font-bold uppercase tracking-widest rounded-full border border-[#F8B229] shadow-[2px_2px_0px_0px_#D42426]">
-            🎄 DELIVERED TOYS & WORKSHOP SYSTEMS 🎄
+          <div className="inline-block px-3 py-1 bg-emerald-950/80 text-yellow-400 text-xs font-mono font-semibold uppercase tracking-wider rounded-full border border-yellow-400/50 shadow-[0_0_12px_rgba(248,178,41,0.25)]">
+            🎄 Portfolio Showcase
           </div>
-          <h2 className="font-christmas text-4xl font-extrabold uppercase tracking-wide text-[#D42426] dark:text-[#F8B229] sm:text-5xl md:text-6xl drop-shadow-[0_2px_10px_rgba(212,36,38,0.2)]">
-            COMPLETED SYSTEMS & INVENTIONS
+          <h2 className="font-christmas text-4xl font-extrabold uppercase tracking-wide text-red-500 dark:text-yellow-400 sm:text-5xl md:text-6xl drop-shadow-[0_2px_10px_rgba(212,36,38,0.2)]">
+            Featured Projects
           </h2>
-          <p className="max-w-[700px] text-muted-foreground font-medium">
-            Exhibition of high-traffic production platforms, global gift pipelines, and robust web applications.
+          <p className="max-w-[700px] text-emerald-200/80 font-medium">
+            Production systems, full-stack microservices, cloud applications, and developer tools delivered with high reliability.
           </p>
         </div>
 
         {/* Project Tabs */}
         <Tabs defaultValue="company" className="w-full">
           <div className="flex justify-center mb-8">
-            <TabsList>
-              <TabsTrigger value="company">
-                🎁 ENTERPRISE WORKSHOP SYSTEMS ({COMPANY_PROJECTS_DATA.length})
+            <TabsList className="bg-emerald-950/80 border border-emerald-500/30 p-1 rounded-xl">
+              <TabsTrigger value="company" className="rounded-lg text-xs font-semibold px-4 py-2">
+                Enterprise Projects ({COMPANY_PROJECTS_DATA.length})
               </TabsTrigger>
-              <TabsTrigger value="personal">
-                ⭐ ELVEN CREATIONS ({PERSONAL_PROJECTS_DATA.length})
+              <TabsTrigger value="personal" className="rounded-lg text-xs font-semibold px-4 py-2">
+                Personal Projects ({PERSONAL_PROJECTS_DATA.length})
               </TabsTrigger>
             </TabsList>
           </div>

@@ -1,27 +1,26 @@
 import { Badge } from '@/themes/christmas/ui/badge';
 import { SKILLS_BY_LEVEL, SOFT_SKILLS } from '@/lib/data';
-import { Card, CardContent } from '@/themes/christmas/ui/card';
 
 export default function ChristmasSkills() {
   const categoryTitles = {
-    Expert: 'MASTER WORKSHOP TOOLS (EXPERT ARSENAL)',
-    Intermediate: 'ELVEN PROTOCOLS (INTERMEDIATE)',
-    Beginner: 'NORTH POLE EXPERIMENTS (EXPLORING)',
+    Expert: 'Advanced & Production Expertise',
+    Intermediate: 'Core Frameworks & Tooling',
+    Beginner: 'Emerging & Exploring',
   };
 
   return (
-    <section id="skills" className="w-full py-12 sm:py-20 bg-card/40 border-b-2 border-[#165B33]">
+    <section id="skills" className="w-full py-12 sm:py-20 bg-[#061A0E]/60 border-b border-emerald-500/30">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center space-y-3 mb-12">
-          <div className="inline-block px-3 py-1 bg-[#165B33] text-[#F8B229] text-xs font-bold uppercase tracking-widest rounded-full border border-[#F8B229] shadow-[2px_2px_0px_0px_#D42426]">
-            🎄 WORKSHOP TOOLKIT & CAPABILITIES 🎄
+          <div className="inline-block px-3 py-1 bg-emerald-950/80 text-yellow-400 text-xs font-mono font-semibold uppercase tracking-wider rounded-full border border-yellow-400/50 shadow-[0_0_12px_rgba(248,178,41,0.25)]">
+            🎄 Technical Toolkit
           </div>
-          <h2 className="font-christmas text-4xl font-extrabold uppercase tracking-wide text-[#D42426] dark:text-[#F8B229] sm:text-5xl md:text-6xl drop-shadow-[0_2px_10px_rgba(212,36,38,0.2)]">
-            ELVEN ARSENAL & TECH CRAFT
+          <h2 className="font-christmas text-4xl font-extrabold uppercase tracking-wide text-red-500 dark:text-yellow-400 sm:text-5xl md:text-6xl drop-shadow-[0_2px_10px_rgba(212,36,38,0.2)]">
+            Skills & Technologies
           </h2>
-          <p className="max-w-[700px] text-muted-foreground font-medium">
-            Fine-tuned developer craft, modern frontend architectures, and resilient distributed platforms built to survive Christmas rush traffic.
+          <p className="max-w-[700px] text-emerald-200/80 font-medium">
+            Core developer craft, frontend architectures, resilient distributed microservices, and modern database platforms.
           </p>
         </div>
 
@@ -29,44 +28,44 @@ export default function ChristmasSkills() {
         <div className="grid gap-6 md:grid-cols-3">
           {(Object.entries(SKILLS_BY_LEVEL) as [keyof typeof categoryTitles, string[]][]).map(
             ([level, skills]) => (
-              <Card key={level} className="relative overflow-hidden">
-                <div className="bg-[#165B33] text-white px-4 py-2 border-b-2 border-[#F8B229] flex items-center justify-between">
-                  <h3 className="font-bold text-xs tracking-wider uppercase font-sans">
-                    ⭐ {categoryTitles[level]}
-                  </h3>
-                  <span className="text-[10px] font-mono font-bold bg-[#F8B229] text-[#165B33] px-2 py-0.5 rounded-full">
-                    TIER {level === 'Expert' ? 'I' : level === 'Intermediate' ? 'II' : 'III'}
-                  </span>
-                </div>
-                <CardContent className="p-5">
-                  <div className="flex flex-wrap gap-2 pt-2">
+              <div key={level} className="festive-glass-card rounded-2xl p-5 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-emerald-500/20">
+                    <h3 className="font-semibold text-sm tracking-wide text-emerald-100">
+                      {categoryTitles[level]}
+                    </h3>
+                    <span className="text-[10px] font-mono font-bold bg-emerald-950 border border-yellow-400/40 text-yellow-300 px-2 py-0.5 rounded-full">
+                      {level}
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 pt-1">
                     {skills.map((skill) => (
                       <Badge
                         key={skill}
                         variant={level === 'Expert' ? 'default' : level === 'Intermediate' ? 'secondary' : 'outline'}
-                        className="text-xs font-mono font-bold hover:scale-105 transition-transform"
+                        className="text-xs font-mono font-medium hover:scale-105 transition-transform"
                       >
                         {skill}
                       </Badge>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             )
           )}
         </div>
 
         {/* Soft Skills Section */}
         <div className="mt-8">
-          <div className="p-4 bg-background/90 rounded-2xl border-2 border-[#165B33] shadow-[4px_4px_0px_0px_#D42426]">
-            <h4 className="font-christmas text-2xl tracking-wide text-[#165B33] dark:text-[#52B788] mb-3">
-              ❄️ WORKSHOP SYNERGY & COLLABORATION:
+          <div className="festive-glass-card p-6 rounded-2xl">
+            <h4 className="text-sm font-mono font-semibold uppercase tracking-wider text-yellow-300 mb-3 flex items-center gap-2">
+              <span>❄️</span> Team Synergy & Collaborative Strengths:
             </h4>
             <div className="flex flex-wrap gap-2">
               {SOFT_SKILLS.map((skill) => (
                 <span
                   key={skill}
-                  className="px-3 py-1 bg-card rounded-full border border-[#165B33] text-xs font-bold uppercase tracking-wider text-foreground hover:text-[#D42426] hover:border-[#D42426] transition-colors"
+                  className="px-3 py-1.5 rounded-xl bg-emerald-950/60 border border-emerald-500/30 text-xs font-medium text-emerald-200 hover:border-yellow-400/60 transition-colors"
                 >
                   🎁 {skill}
                 </span>

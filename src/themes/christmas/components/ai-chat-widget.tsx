@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/themes/christmas/ui/button';
-import { Gift, X, Send, User, Loader2, ArrowUp, Sparkles } from 'lucide-react';
+import { Gift, X, Send, User, Loader2, ArrowUp } from 'lucide-react';
 import { sendMessageStream, ChatMessage } from '@/lib/ai-chat';
 import { cn } from '@/lib/utils';
 import ReactMarkdown from 'react-markdown';
@@ -13,7 +13,7 @@ export default function ChristmasAIChatWidget() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: 'model',
-      content: "Ho Ho Ho! 🎄 I am Santa's Elven Helper & AI Assistant for Chit Swe, Santa's Lead Architect! Inquire freely about his North Pole toys, distributed systems, or career achievements!"
+      content: "Hello! 🎄 I'm Chit Swe's AI Assistant. Feel free to ask me anything about his technical stack, engineering experience, or portfolio projects!"
     }
   ]);
   const [input, setInput] = useState('');
@@ -76,7 +76,7 @@ export default function ChristmasAIChatWidget() {
         ...prev.slice(0, -1),
         {
           role: 'model',
-          content: 'A blizzard momentarily disrupted the North Pole communications! Please send your message again.',
+          content: 'Communications error! Please send your question again.',
         },
       ]);
     } finally {
@@ -97,8 +97,8 @@ export default function ChristmasAIChatWidget() {
             size="icon"
             variant="secondary"
             onClick={scrollToTop}
-            aria-label="Fly to Sleigh Top"
-            className="rounded-full shadow-lg h-11 w-11 hover:scale-110 transition-transform"
+            aria-label="Back to Top"
+            className="rounded-full shadow-lg h-11 w-11 bg-emerald-950/80 border border-emerald-500/40 text-yellow-300 hover:scale-110 transition-transform"
           >
             <ArrowUp className="h-5 w-5" />
           </Button>
@@ -107,12 +107,12 @@ export default function ChristmasAIChatWidget() {
         {!isOpen && (
           <Button
             onClick={() => setIsOpen(true)}
-            className="rounded-full shadow-[0_0_20px_rgba(212,36,38,0.5)] h-13 px-4 py-3 flex items-center gap-2 hover:scale-105 transition-transform bg-[#D42426] text-white font-bold border-2 border-[#F8B229]"
-            aria-label="Open Santa's AI Elf"
+            className="rounded-full shadow-[0_0_20px_rgba(212,36,38,0.5)] h-13 px-4 py-3 flex items-center gap-2 hover:scale-105 transition-transform bg-[#D42426] text-white font-bold border border-[#F8B229]"
+            aria-label="Open AI Assistant"
           >
-            <Gift className="h-6 w-6 animate-bounce text-[#F8B229]" />
-            <span className="font-bold text-xs uppercase tracking-wider hidden sm:inline">
-              Ask Santa&apos;s AI Elf
+            <Gift className="h-5 w-5 text-yellow-300 animate-bounce" />
+            <span className="font-mono text-xs uppercase tracking-wider hidden sm:inline">
+              Chat with AI
             </span>
           </Button>
         )}
@@ -120,26 +120,26 @@ export default function ChristmasAIChatWidget() {
 
       {/* Chat Window Dialog */}
       {isOpen && (
-        <div className="fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 sm:w-[400px] sm:h-[550px] z-50 flex flex-col bg-background/95 backdrop-blur-md border-2 border-[#165B33] shadow-[0_0_30px_rgba(212,36,38,0.35)] rounded-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 sm:w-[400px] sm:h-[550px] z-50 flex flex-col bg-[#071E12]/95 backdrop-blur-md border border-emerald-500/40 shadow-[0_12px_40px_rgba(0,0,0,0.8)] rounded-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3 bg-[#D42426] text-white border-b-2 border-[#F8B229]">
-            <div className="flex items-center gap-2">
-              <Gift className="h-5 w-5 text-[#F8B229] animate-spin-slow" />
+          <div className="flex items-center justify-between px-4 py-3 bg-[#0E2818] text-white border-b border-emerald-500/30">
+            <div className="flex items-center gap-2.5">
+              <Gift className="h-5 w-5 text-yellow-400" />
               <div>
-                <h3 className="font-christmas text-2xl tracking-wide text-[#F8B229]">
-                  SANTA&apos;S WORKSHOP AI
+                <h3 className="font-christmas text-2xl tracking-wide text-yellow-400">
+                  AI ASSISTANT
                 </h3>
-                <p className="text-[10px] text-white/80 font-mono">
-                  North Pole Intelligence • Holiday Edition
+                <p className="text-[10px] text-emerald-300/80 font-mono">
+                  Online • Technical Questions
                 </p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="p-1 hover:bg-black/20 rounded-md transition-colors"
+              className="p-1 hover:bg-emerald-950/60 rounded-lg transition-colors text-emerald-300 hover:text-white"
               aria-label="Close Chat"
             >
-              <X className="h-5 w-5 text-white" />
+              <X className="h-5 w-5" />
             </button>
           </div>
 
@@ -157,18 +157,18 @@ export default function ChristmasAIChatWidget() {
                   className={cn(
                     'w-7 h-7 rounded-full flex items-center justify-center shrink-0 border text-xs',
                     message.role === 'user'
-                      ? 'bg-[#165B33] border-[#F8B229] text-white'
-                      : 'bg-[#D42426] border-[#F8B229] text-white'
+                      ? 'bg-red-600 border-red-500 text-white'
+                      : 'bg-emerald-950 border-emerald-500/50 text-yellow-300'
                   )}
                 >
-                  {message.role === 'user' ? <User className="h-4 w-4" /> : <Gift className="h-4 w-4 text-[#F8B229]" />}
+                  {message.role === 'user' ? <User className="h-4 w-4" /> : <Gift className="h-4 w-4 text-yellow-300" />}
                 </div>
                 <div
                   className={cn(
                     'rounded-xl p-3 text-xs leading-relaxed border',
                     message.role === 'user'
-                      ? 'bg-[#165B33]/15 border-[#165B33] text-foreground'
-                      : 'bg-card border-[#D42426] text-foreground shadow-[0_0_10px_rgba(212,36,38,0.1)]'
+                      ? 'bg-red-600/15 border-red-500/40 text-white'
+                      : 'bg-[#0E2818] border-emerald-500/30 text-emerald-100 shadow-sm'
                   )}
                 >
                   {message.content ? (
@@ -176,9 +176,9 @@ export default function ChristmasAIChatWidget() {
                       <ReactMarkdown>{message.content}</ReactMarkdown>
                     </div>
                   ) : (
-                    <div className="flex items-center gap-1.5 py-1 text-muted-foreground">
-                      <Loader2 className="h-3.5 w-3.5 animate-spin text-[#D42426]" />
-                      <span className="font-mono text-[10px]">Calling North Pole elves...</span>
+                    <div className="flex items-center gap-1.5 py-1 text-emerald-300/70">
+                      <Loader2 className="h-3.5 w-3.5 animate-spin text-yellow-400" />
+                      <span className="font-mono text-[10px]">Thinking...</span>
                     </div>
                   )}
                 </div>
@@ -190,21 +190,21 @@ export default function ChristmasAIChatWidget() {
           {/* Input Form */}
           <form
             onSubmit={handleSubmit}
-            className="p-3 bg-card border-t-2 border-[#165B33] flex items-center gap-2"
+            className="p-3 bg-[#0E2818] border-t border-emerald-500/30 flex items-center gap-2"
           >
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask Santa's Elven AI..."
+              placeholder="Ask a question..."
               disabled={isLoading}
-              className="flex-1 bg-background border border-[#165B33] rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-[#F8B229]"
+              className="flex-1 bg-[#04120A] border border-emerald-500/30 rounded-xl px-3 py-2 text-xs text-emerald-100 placeholder:text-emerald-500/50 focus:outline-none focus:border-yellow-400"
             />
             <Button
               type="submit"
               size="sm"
               disabled={isLoading || !input.trim()}
-              className="h-8 px-3"
+              className="rounded-lg bg-red-600 hover:bg-red-700 text-white border border-yellow-400/50 h-8 px-3"
             >
               <Send className="h-3.5 w-3.5" />
             </Button>

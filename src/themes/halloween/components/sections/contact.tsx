@@ -1,98 +1,97 @@
 import HalloweenContactForm from '@/themes/halloween/components/contact-form';
 import { getProfileData } from '@/lib/data';
-import { Mail, MapPin, Skull, Sparkles } from 'lucide-react';
-import { Card } from '@/themes/halloween/ui/card';
+import { Mail, MapPin, Sparkles } from 'lucide-react';
 
 export default function HalloweenContact() {
   const profile = getProfileData('halloween');
 
   return (
-    <section id="contact" className="w-full py-12 sm:py-20 border-b-2 border-[#8A2BE2]">
+    <section id="contact" className="stone-bg-noise w-full py-12 sm:py-20 border-b-2 border-[#443D36]">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center space-y-3 mb-12">
-          <div className="inline-block px-3 py-1 bg-[#8A2BE2] text-[#FF6B00] text-xs font-bold uppercase tracking-widest rounded-md border border-[#FF6B00] shadow-[2px_2px_0px_0px_#FF6B00]">
-            🎃 SEANCE PARLOR & TELEGRAPH 🎃
+          <div className="inline-block px-3 py-1 bg-[#26211C] text-orange-400 text-xs font-mono font-semibold uppercase tracking-wider rounded-full border border-orange-500/60 shadow-[0_0_12px_rgba(255,107,0,0.25)]">
+            🎃 Get In Touch
           </div>
-          <h2 className="font-creepster text-4xl font-extrabold uppercase tracking-wider text-[#FF6B00] sm:text-5xl md:text-6xl drop-shadow-[0_2px_10px_rgba(255,107,0,0.3)]">
-            SUMMON THE CODE NECROMANCER
+          <h2 className="font-creepster text-4xl font-extrabold uppercase tracking-wider text-orange-400 sm:text-5xl md:text-6xl stone-engraved-text drop-shadow-[0_2px_10px_rgba(255,107,0,0.3)]">
+            Contact & Inquiries
           </h2>
-          <p className="max-w-[700px] text-muted-foreground font-medium">
-            Open an ethereal communication channel with Chit Swe. Whether you seek system exorcisms, full-stack necromancy, or new ventures.
+          <p className="max-w-[700px] text-stone-300 font-medium">
+            Send an inquiry or project proposal directly to Chit Swe. Inquiries regarding full-stack contracts and technical leadership are welcome.
           </p>
         </div>
 
         {/* Content Grid */}
         <div className="grid gap-8 lg:grid-cols-2 max-w-5xl mx-auto items-start">
           {/* Dispatch Form Card */}
-          <Card className="p-6">
-            <div className="mb-6 pb-3 border-b-2 border-[#8A2BE2]">
-              <h3 className="font-creepster text-2xl tracking-wider text-[#FF6B00]">
-                🕸️ SEANCE DISPATCH SCROLL
+          <div className="stone-slab-texture rounded-2xl border border-[#443D36] p-6 shadow-[0_6px_25px_rgba(0,0,0,0.7)]">
+            <div className="mb-6 pb-3 border-b border-[#443D36]">
+              <h3 className="text-xl font-bold text-stone-100">
+                Send a Message
               </h3>
-              <p className="text-xs text-muted-foreground font-mono mt-1">
-                [ SPECTRAL TRANSMISSION TO MASTER SORCERER ]
+              <p className="text-xs text-stone-400 font-mono mt-1">
+                Fill in the details below to start a conversation.
               </p>
             </div>
             <HalloweenContactForm />
-          </Card>
+          </div>
 
-          {/* Bureau Details Card */}
+          {/* Details Card */}
           <div className="space-y-6">
-            <Card className="p-6">
-              <div className="bg-[#8A2BE2] text-[#FF6B00] px-4 py-2 border-b-2 border-[#FF6B00] -mx-6 -mt-6 mb-6 rounded-t-lg">
-                <h3 className="font-bold text-xs tracking-wider uppercase font-sans">
-                  🔮 SPIRIT SANCTUM & SANCTUARY
+            <div className="stone-slab-texture rounded-2xl border border-[#443D36] p-6 shadow-[0_6px_25px_rgba(0,0,0,0.7)]">
+              <div className="pb-3 border-b border-[#443D36] mb-5">
+                <h3 className="font-bold text-sm tracking-wider uppercase font-mono text-orange-400">
+                  Direct Contact Info
                 </h3>
               </div>
 
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="p-2.5 bg-[#8A2BE2] text-[#FF6B00] rounded-lg shrink-0 border border-[#FF6B00]">
+              <div className="space-y-5">
+                <div className="flex items-start gap-3.5">
+                  <div className="p-2.5 bg-[#26211C] text-orange-400 rounded-xl shrink-0 border border-orange-500/40">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xs uppercase text-[#FF6B00]">
-                      ASTRAL EMAIL INBOX
+                    <h4 className="font-bold text-xs uppercase text-stone-400 font-mono">
+                      Email Address
                     </h4>
                     <a
                       href={`mailto:${profile.contact.email}`}
-                      className="text-sm font-mono font-bold hover:underline text-foreground hover:text-[#39FF14] transition-colors"
+                      className="text-sm font-mono font-semibold hover:underline text-stone-100 hover:text-orange-400 transition-colors"
                     >
                       {profile.contact.email}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="p-2.5 bg-[#8A2BE2] text-[#FF6B00] rounded-lg shrink-0 border border-[#FF6B00]">
+                <div className="flex items-start gap-3.5">
+                  <div className="p-2.5 bg-[#26211C] text-orange-400 rounded-xl shrink-0 border border-orange-500/40">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xs uppercase text-[#FF6B00]">
-                      CRYPT LAIR / REALM
+                    <h4 className="font-bold text-xs uppercase text-stone-400 font-mono">
+                      Location & Timezone
                     </h4>
-                    <p className="text-sm font-medium text-foreground">
-                      Remote • Global Realm Coverage
+                    <p className="text-sm font-medium text-stone-200">
+                      Remote • Global Timezones
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="p-2.5 bg-[#8A2BE2] text-[#39FF14] rounded-lg shrink-0 border border-[#FF6B00]">
+                <div className="flex items-start gap-3.5">
+                  <div className="p-2.5 bg-[#26211C] text-green-400 rounded-xl shrink-0 border border-green-500/40">
                     <Sparkles className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xs uppercase text-[#FF6B00]">
-                      SUMMONING PROTOCOL
+                    <h4 className="font-bold text-xs uppercase text-stone-400 font-mono">
+                      Availability Status
                     </h4>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
-                      Available for remote curses, architectural conjuring, and contracts across all mortal timezones.
+                    <p className="text-xs text-stone-300 leading-relaxed">
+                      Available for full-stack engineering roles, high-scale backend consulting, and open-source collaborations.
                     </p>
                   </div>
                 </div>
               </div>
-            </Card>
+            </div>
           </div>
         </div>
       </div>

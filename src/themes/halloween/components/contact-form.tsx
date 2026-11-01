@@ -19,10 +19,10 @@ import { Send, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: 'Sorcerer / Mortal name must be at least 2 characters.' }),
-  email: z.string().email({ message: 'Valid owl or ether address is required.' }),
-  subject: z.string().min(5, { message: 'Incantation subject must be at least 5 characters.' }),
-  message: z.string().min(10, { message: 'Ritual message must be at least 10 characters.' }),
+  name: z.string().min(2, { message: 'Please enter your name.' }),
+  email: z.string().email({ message: 'Valid email address is required.' }),
+  subject: z.string().min(5, { message: 'Subject must be at least 5 characters.' }),
+  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -43,13 +43,12 @@ export default function HalloweenContactForm() {
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    // Simulate seance transmission
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setIsSubmitting(false);
 
     toast({
-      title: '🎃 SEANCE INVOCATION RECEIVED! 🎃',
-      description: `Your spirit dispatch has reached the Grand Pumpkin Necromancer. An ethereal answer shall arrive shortly!`,
+      title: '🎃 Message Sent! 🎃',
+      description: `Thank you, ${data.name}. Your message has been received. I will reply to you promptly!`,
     });
     form.reset();
   };
@@ -62,13 +61,13 @@ export default function HalloweenContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-bold text-xs uppercase tracking-wider text-[#FF6B00]">
-                🕸️ CONJURER / MORTAL NAME
+              <FormLabel className="font-mono text-xs font-semibold text-stone-300">
+                Your Name
               </FormLabel>
               <FormControl>
-                <Input placeholder="Enter your name or witch/wizard title" {...field} />
+                <Input placeholder="John Doe" className="bg-[#1C1916] border-[#443D36] text-stone-100 placeholder:text-stone-500 rounded-xl focus:border-orange-500" {...field} />
               </FormControl>
-              <FormMessage className="text-[#FF0055] text-xs" />
+              <FormMessage className="text-orange-500 text-xs" />
             </FormItem>
           )}
         />
@@ -78,13 +77,13 @@ export default function HalloweenContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-bold text-xs uppercase tracking-wider text-[#FF6B00]">
-                🕸️ SPECTRAL EMAIL
+              <FormLabel className="font-mono text-xs font-semibold text-stone-300">
+                Email Address
               </FormLabel>
               <FormControl>
-                <Input type="email" placeholder="mortal@coven.realm" {...field} />
+                <Input type="email" placeholder="john@example.com" className="bg-[#1C1916] border-[#443D36] text-stone-100 placeholder:text-stone-500 rounded-xl focus:border-orange-500" {...field} />
               </FormControl>
-              <FormMessage className="text-[#FF0055] text-xs" />
+              <FormMessage className="text-orange-500 text-xs" />
             </FormItem>
           )}
         />
@@ -94,13 +93,13 @@ export default function HalloweenContactForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-bold text-xs uppercase tracking-wider text-[#FF6B00]">
-                🕸️ RITUAL OBJECTIVE / SUBJECT
+              <FormLabel className="font-mono text-xs font-semibold text-stone-300">
+                Subject
               </FormLabel>
               <FormControl>
-                <Input placeholder="Reason for summoning (e.g., Code Necromancy project)" {...field} />
+                <Input placeholder="Project collaboration or inquiry" className="bg-[#1C1916] border-[#443D36] text-stone-100 placeholder:text-stone-500 rounded-xl focus:border-orange-500" {...field} />
               </FormControl>
-              <FormMessage className="text-[#FF0055] text-xs" />
+              <FormMessage className="text-orange-500 text-xs" />
             </FormItem>
           )}
         />
@@ -110,29 +109,30 @@ export default function HalloweenContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-bold text-xs uppercase tracking-wider text-[#FF6B00]">
-                🕸️ GRIMOIRE MESSAGE / SUMMONING
+              <FormLabel className="font-mono text-xs font-semibold text-stone-300">
+                Message
               </FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Inscribe your message into the ether..."
+                  placeholder="Tell me about your project or inquiry..."
                   rows={4}
+                  className="bg-[#1C1916] border-[#443D36] text-stone-100 placeholder:text-stone-500 rounded-xl focus:border-orange-500"
                   {...field}
                 />
               </FormControl>
-              <FormMessage className="text-[#FF0055] text-xs" />
+              <FormMessage className="text-orange-500 text-xs" />
             </FormItem>
           )}
         />
 
-        <Button type="submit" disabled={isSubmitting} className="w-full text-sm font-bold">
+        <Button type="submit" disabled={isSubmitting} className="stone-btn-ember w-full text-sm font-semibold rounded-xl">
           {isSubmitting ? (
             <>
-              <Sparkles className="mr-2 h-4 w-4 animate-spin" /> CONJURING DISPATCH...
+              <Sparkles className="mr-2 h-4 w-4 animate-spin" /> Sending Message...
             </>
           ) : (
             <>
-              <Send className="mr-2 h-4 w-4" /> TRANSMIT RITUAL DISPATCH 🎃
+              <Send className="mr-2 h-4 w-4" /> Send Message 🎃
             </>
           )}
         </Button>

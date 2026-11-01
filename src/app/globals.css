@@ -492,34 +492,122 @@ body {
     transform: rotate(-1deg);
   }
 
-  /* ── Halloween Spooky Utilities ── */
+  /* ── Halloween Spooky & Ancient Stone Crypt Utilities ── */
   .halloween-glow {
     text-shadow: 0 0 10px rgba(255, 107, 0, 0.8), 0 0 20px rgba(138, 43, 226, 0.6);
   }
   .halloween-slime-glow {
     text-shadow: 0 0 10px rgba(57, 255, 20, 0.8), 0 0 20px rgba(57, 255, 20, 0.4);
   }
+
+  /* Procedural Stone Crypt Noise & Strata Background */
+  .stone-bg-noise {
+    background-color: #12100E;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(255, 107, 0, 0.07) 0%, transparent 60%),
+      radial-gradient(circle at 100% 100%, rgba(34, 197, 94, 0.05) 0%, transparent 50%),
+      linear-gradient(180deg, rgba(20, 18, 15, 0.95) 0%, rgba(14, 12, 10, 0.98) 100%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.09'/%3E%3C/svg%3E");
+  }
+
+  /* Stone Slab / Masonry Block Texture */
+  .stone-slab-texture {
+    background-color: #1C1916;
+    background-image: 
+      linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 35%, rgba(0, 0, 0, 0.5) 100%),
+      radial-gradient(ellipse at 50% 0%, rgba(68, 64, 60, 0.35) 0%, transparent 70%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.12'/%3E%3C/svg%3E");
+  }
+
+  /* Gravestone Slab with Physical Chiseled Stone Bevels & Granite Texture */
+  .tombstone-slab {
+    position: relative;
+    border-radius: 2rem 2rem 0.75rem 0.75rem;
+    background-color: #1D1A17;
+    background-image: 
+      linear-gradient(180deg, #28231E 0%, #1A1714 35%, #110F0D 100%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.13'/%3E%3C/svg%3E");
+    border: 2px solid #484139;
+    box-shadow: 
+      inset 1px 1px 0px rgba(255, 255, 255, 0.12),
+      inset -1px -1px 0px rgba(0, 0, 0, 0.85),
+      0 10px 25px rgba(0, 0, 0, 0.75);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .tombstone-slab:hover {
+    border-color: #FF6B00;
+    box-shadow: 
+      inset 1px 1px 0px rgba(255, 107, 0, 0.35),
+      0 0 25px rgba(255, 107, 0, 0.35),
+      0 14px 35px rgba(0, 0, 0, 0.85);
+    transform: translateY(-4px);
+  }
+
+  .stone-engraved-text {
+    text-shadow: 
+      1px 1px 0px rgba(0, 0, 0, 0.95),
+      -1px -1px 0px rgba(255, 255, 255, 0.12),
+      0 2px 6px rgba(0, 0, 0, 0.85);
+  }
+
+  /* Physical Chiseled Stone Block Button */
+  .stone-btn {
+    background-color: #26211C;
+    background-image: 
+      linear-gradient(180deg, #352F28 0%, #1D1A17 100%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E");
+    border: 2px solid #4E463E;
+    color: #E7DFD5;
+    box-shadow: 
+      inset 1px 1px 0px rgba(255, 255, 255, 0.16),
+      inset -1px -1px 0px rgba(0, 0, 0, 0.85),
+      0 4px 8px rgba(0, 0, 0, 0.6);
+    transition: all 0.2s ease;
+  }
+  .stone-btn:hover {
+    border-color: #FF6B00;
+    color: #FFB366;
+    box-shadow: 
+      inset 1px 1px 0px rgba(255, 107, 0, 0.3),
+      0 0 18px rgba(255, 107, 0, 0.35),
+      0 6px 12px rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px);
+  }
+  .stone-btn:active {
+    transform: translateY(1px);
+    box-shadow: 
+      inset 2px 2px 4px rgba(0, 0, 0, 0.9),
+      0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Primary Orange Ember Stone Button */
+  .stone-btn-ember {
+    background-color: #B45309;
+    background-image: 
+      linear-gradient(180deg, #EA580C 0%, #9A3412 100%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
+    border: 2px solid #FF6B00;
+    color: #0F0D0B;
+    font-weight: 700;
+    box-shadow: 
+      inset 1px 1px 0px rgba(255, 255, 255, 0.35),
+      inset -1px -1px 0px rgba(0, 0, 0, 0.7),
+      0 0 18px rgba(255, 107, 0, 0.45),
+      0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: all 0.2s ease;
+  }
+  .stone-btn-ember:hover {
+    background-image: linear-gradient(180deg, #FF6B00 0%, #C2410C 100%);
+    box-shadow: 
+      inset 1px 1px 0px rgba(255, 255, 255, 0.45),
+      0 0 25px rgba(255, 107, 0, 0.65),
+      0 6px 14px rgba(0, 0, 0, 0.85);
+    transform: translateY(-2px);
+  }
+
   .spooky-card {
     border: 2px solid #FF6B00;
     box-shadow: 4px 4px 0px 0px #8A2BE2;
-  }
-  .spooky-btn {
-    background: #FF6B00;
-    color: #0D0714;
-    border: 2px solid #39FF14;
-    box-shadow: 3px 3px 0px 0px #8A2BE2;
-    font-family: 'Creepster', cursive;
-    letter-spacing: 0.08em;
-  }
-  .spooky-btn:hover {
-    background: #39FF14;
-    color: #0D0714;
-    border-color: #FF6B00;
-    box-shadow: 4px 4px 0px 0px #FF6B00;
-  }
-  .spooky-btn:active {
-    transform: translate(2px, 2px);
-    box-shadow: none;
   }
   .spiderweb-divider {
     height: 4px;
@@ -531,27 +619,21 @@ body {
   .christmas-glow {
     text-shadow: 0 0 8px rgba(248, 178, 41, 0.8), 0 0 18px rgba(212, 36, 38, 0.5);
   }
+  .festive-glass-card {
+    background: rgba(7, 30, 18, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    box-shadow: 0 4px 20px rgba(22, 91, 51, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+  }
+  .festive-glass-card:hover {
+    border-color: rgba(248, 178, 41, 0.6);
+    box-shadow: 0 8px 30px rgba(212, 36, 38, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+  }
   .festive-card {
     border: 2px solid #D42426;
     box-shadow: 4px 4px 0px 0px #165B33;
-  }
-  .festive-btn {
-    background: #D42426;
-    color: #FFFFFF;
-    border: 2px solid #F8B229;
-    box-shadow: 3px 3px 0px 0px #0B4619;
-    font-family: 'Mountains of Christmas', cursive;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-  }
-  .festive-btn:hover {
-    background: #165B33;
-    color: #F8B229;
-    border-color: #D42426;
-  }
-  .festive-btn:active {
-    transform: translate(2px, 2px);
-    box-shadow: none;
   }
   .candy-cane-divider {
     height: 8px;

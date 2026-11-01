@@ -15,14 +15,14 @@ import {
 import { Input } from '@/themes/christmas/ui/input';
 import { Textarea } from '@/themes/christmas/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Send, Gift, Sparkles } from 'lucide-react';
+import { Send, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: 'Your name or elf handle must be at least 2 characters.' }),
-  email: z.string().email({ message: 'Valid postal dispatch address is required.' }),
-  subject: z.string().min(5, { message: 'Wishlist or project subject must be at least 5 characters.' }),
-  message: z.string().min(10, { message: 'Letter message must be at least 10 characters.' }),
+  name: z.string().min(2, { message: 'Please enter your name.' }),
+  email: z.string().email({ message: 'Valid email address is required.' }),
+  subject: z.string().min(5, { message: 'Subject must be at least 5 characters.' }),
+  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -43,13 +43,12 @@ export default function ChristmasContactForm() {
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    // Simulate North Pole postal dispatch
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setIsSubmitting(false);
 
     toast({
-      title: '🎄 LETTER DELIVERED TO SANTA! 🎄',
-      description: `Ho ho ho! Letter received from ${data.name}. The North Pole engineering elves will reply by reindeer dispatch soon!`,
+      title: '🎄 Message Delivered! 🎄',
+      description: `Thank you, ${data.name}. Your message has been received! I will reply promptly.`,
     });
     form.reset();
   };
@@ -62,13 +61,13 @@ export default function ChristmasContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-bold text-xs uppercase tracking-wider text-[#D42426] dark:text-[#F8B229]">
-                🎅 SENDER / ELF NAME
+              <FormLabel className="font-mono text-xs font-semibold text-emerald-200">
+                Your Name
               </FormLabel>
               <FormControl>
-                <Input placeholder="Enter your full name or workshop title" {...field} />
+                <Input placeholder="John Doe" className="bg-[#04120A] border-emerald-500/30 text-emerald-100 placeholder:text-emerald-500/50 rounded-xl focus:border-yellow-400" {...field} />
               </FormControl>
-              <FormMessage className="text-[#D42426] text-xs" />
+              <FormMessage className="text-red-400 text-xs" />
             </FormItem>
           )}
         />
@@ -78,13 +77,13 @@ export default function ChristmasContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-bold text-xs uppercase tracking-wider text-[#D42426] dark:text-[#F8B229]">
-                🎅 NORTH POLE POST EMAIL
+              <FormLabel className="font-mono text-xs font-semibold text-emerald-200">
+                Email Address
               </FormLabel>
               <FormControl>
-                <Input type="email" placeholder="elf@northpole.workshop" {...field} />
+                <Input type="email" placeholder="john@example.com" className="bg-[#04120A] border-emerald-500/30 text-emerald-100 placeholder:text-emerald-500/50 rounded-xl focus:border-yellow-400" {...field} />
               </FormControl>
-              <FormMessage className="text-[#D42426] text-xs" />
+              <FormMessage className="text-red-400 text-xs" />
             </FormItem>
           )}
         />
@@ -94,13 +93,13 @@ export default function ChristmasContactForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-bold text-xs uppercase tracking-wider text-[#D42426] dark:text-[#F8B229]">
-                🎅 INQUIRY OR WISHLIST SUBJECT
+              <FormLabel className="font-mono text-xs font-semibold text-emerald-200">
+                Subject
               </FormLabel>
               <FormControl>
-                <Input placeholder="New software architecture / collaboration inquiry" {...field} />
+                <Input placeholder="Project collaboration or inquiry" className="bg-[#04120A] border-emerald-500/30 text-emerald-100 placeholder:text-emerald-500/50 rounded-xl focus:border-yellow-400" {...field} />
               </FormControl>
-              <FormMessage className="text-[#D42426] text-xs" />
+              <FormMessage className="text-red-400 text-xs" />
             </FormItem>
           )}
         />
@@ -110,29 +109,30 @@ export default function ChristmasContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-bold text-xs uppercase tracking-wider text-[#D42426] dark:text-[#F8B229]">
-                🎅 LETTER TO SANTA&apos;S LEAD ARCHITECT
+              <FormLabel className="font-mono text-xs font-semibold text-emerald-200">
+                Message
               </FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Draft your letter with full project specs or holiday greetings..."
+                  placeholder="Tell me about your project or inquiry..."
                   rows={4}
+                  className="bg-[#04120A] border-emerald-500/30 text-emerald-100 placeholder:text-emerald-500/50 rounded-xl focus:border-yellow-400"
                   {...field}
                 />
               </FormControl>
-              <FormMessage className="text-[#D42426] text-xs" />
+              <FormMessage className="text-red-400 text-xs" />
             </FormItem>
           )}
         />
 
-        <Button type="submit" disabled={isSubmitting} className="w-full text-sm font-bold">
+        <Button type="submit" disabled={isSubmitting} className="rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold border border-yellow-400/50 shadow-[0_0_15px_rgba(212,36,38,0.4)] w-full text-sm">
           {isSubmitting ? (
             <>
-              <Sparkles className="mr-2 h-4 w-4 animate-spin" /> DISPATCHING SLEIGH...
+              <Sparkles className="mr-2 h-4 w-4 animate-spin" /> Sending Message...
             </>
           ) : (
             <>
-              <Gift className="mr-2 h-4 w-4" /> DISPATCH LETTER TO SANTA 🎄
+              <Send className="mr-2 h-4 w-4" /> Send Message 🎄
             </>
           )}
         </Button>
