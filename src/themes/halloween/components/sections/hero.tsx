@@ -35,16 +35,6 @@ export default function HalloweenHero() {
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
           <ScrollReveal direction="left" duration={0.8}>
             <div className="flex flex-col justify-center space-y-4">
-              {/* Merit Badge */}
-              <div className="flex items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#26211C] border border-orange-500/60 text-orange-400 font-mono text-xs font-semibold uppercase tracking-wider shadow-[0_0_12px_rgba(255,107,0,0.25)]">
-                  <span>🎃</span> {profile.roleBadge}
-                </span>
-                <span className="text-xs font-mono font-bold text-stone-400 uppercase border border-[#443D36] rounded-full px-2.5 py-1">
-                  #{profile.dossierNumber}
-                </span>
-              </div>
-
               {/* Necromancer Name */}
               <h1 className="font-creepster text-5xl font-extrabold uppercase tracking-wider text-orange-400 sm:text-6xl md:text-7xl lg:text-8xl stone-engraved-text drop-shadow-[0_4px_20px_rgba(255,107,0,0.35)]">
                 {profile.name}

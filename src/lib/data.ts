@@ -52,20 +52,16 @@ export const THEME_PROFILES: Record<ThemeId, Partial<ProfileData>> = {
   },
   halloween: {
     name: 'Chit Swe',
-    title: 'Code Necromancer & Dark Arts Architect',
+    title: 'Code Necromancer & Full Stack Engineer',
     introduction:
-      'Conjuring bewitching digital experiences and summoning resilient, high-throughput backend infrastructure from the computational abyss.',
-    roleBadge: '🎃 GRAND PUMPKIN WIZARD 🎃',
-    dossierNumber: 'SPOOKY-DEV-666',
+      'Crafting resilient, high-throughput backend infrastructure, robust distributed microservices, and engaging web applications.',
     avatarUrl: '/images/profile.png',
   },
   christmas: {
     name: 'Chit Swe',
-    title: 'Chief North Pole Architect',
+    title: 'Full Stack Architect & Engineer',
     introduction:
-      'Engineering jolly digital wonders, crafting rock-solid backend sleighs, and delivering gift-wrapped, high-performance web applications worldwide.',
-    roleBadge: '🎄 SANTA\'S LEAD ARCHITECT 🎄',
-    dossierNumber: 'XMAS-NORTH-2026',
+      'Architecting resilient distributed software systems, high-performance web platforms, and reliable digital experiences worldwide.',
     avatarUrl: '/images/profile.png',
   },
 };

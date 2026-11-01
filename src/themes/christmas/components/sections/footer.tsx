@@ -7,22 +7,20 @@ export default function ChristmasFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-[#04120A] text-emerald-200 border-t border-emerald-500/30 py-8">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2.5 text-center sm:text-left">
-            <span className="text-2xl animate-spin-slow">⭐</span>
-            <div>
-              <p className="font-christmas text-2xl tracking-wide text-yellow-400">
-                {profile.name} • Portfolio
-              </p>
-              <p className="text-xs font-mono text-emerald-300/80">
-                Designed & Built with Next.js & Tailwind CSS • {currentYear}
-              </p>
-            </div>
-          </div>
+    <footer className="w-full border-t border-emerald-500/30 bg-[#041208] py-8 text-emerald-200">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 text-center sm:flex-row md:px-6">
+        <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-4">
+          <p className="text-xs sm:text-sm font-mono text-emerald-200/80">
+            &copy; {currentYear} {profile.name} • Season&apos;s Greetings 🎄
+          </p>
+          <span className="hidden text-emerald-500/40 sm:inline">•</span>
+          <span className="text-xs text-yellow-400 font-christmas text-xl">
+            Designed &amp; Built with Next.js &amp; Tailwind CSS
+          </span>
+        </div>
 
-          <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2.5">
             <a
               href={profile.socialLinks.github}
               target="_blank"
@@ -30,7 +28,7 @@ export default function ChristmasFooter() {
               className="p-2 rounded-full border border-emerald-500/40 bg-emerald-950/60 text-emerald-200 hover:text-yellow-400 hover:border-yellow-400 transition-colors"
               title="GitHub"
             >
-              <SiGithub size={18} color="currentColor" />
+              <SiGithub size={16} />
             </a>
             <a
               href={profile.socialLinks.linkedin}
@@ -39,7 +37,7 @@ export default function ChristmasFooter() {
               className="p-2 rounded-full border border-emerald-500/40 bg-emerald-950/60 text-emerald-200 hover:text-yellow-400 hover:border-yellow-400 transition-colors"
               title="LinkedIn"
             >
-              <Linkedin size={18} />
+              <Linkedin size={16} />
             </a>
             <a
               href={profile.socialLinks.mastodon}
@@ -48,9 +46,13 @@ export default function ChristmasFooter() {
               className="p-2 rounded-full border border-emerald-500/40 bg-emerald-950/60 text-emerald-200 hover:text-yellow-400 hover:border-yellow-400 transition-colors"
               title="Mastodon"
             >
-              <SiMastodon size={18} color="currentColor" />
+              <SiMastodon size={16} />
             </a>
           </div>
+          <span className="text-emerald-500/40">•</span>
+          <a href="#" className="text-xs font-mono text-emerald-200 hover:text-yellow-400 transition-colors">
+            Back to Top ↑
+          </a>
         </div>
       </div>
     </footer>

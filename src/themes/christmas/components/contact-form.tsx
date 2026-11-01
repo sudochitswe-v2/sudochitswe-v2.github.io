@@ -65,7 +65,11 @@ export default function ChristmasContactForm() {
                 Your Name
               </FormLabel>
               <FormControl>
-                <Input placeholder="John Doe" className="bg-[#04120A] border-emerald-500/30 text-emerald-100 placeholder:text-emerald-500/50 rounded-xl focus:border-yellow-400" {...field} />
+                <Input
+                  placeholder="Enter your name"
+                  className="bg-[#061A0E]/90 border-emerald-500/40 text-emerald-100 placeholder:text-emerald-500/50 rounded-xl focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400/40"
+                  {...field}
+                />
               </FormControl>
               <FormMessage className="text-red-400 text-xs" />
             </FormItem>
@@ -81,7 +85,12 @@ export default function ChristmasContactForm() {
                 Email Address
               </FormLabel>
               <FormControl>
-                <Input type="email" placeholder="john@example.com" className="bg-[#04120A] border-emerald-500/30 text-emerald-100 placeholder:text-emerald-500/50 rounded-xl focus:border-yellow-400" {...field} />
+                <Input
+                  type="email"
+                  placeholder="name@example.com"
+                  className="bg-[#061A0E]/90 border-emerald-500/40 text-emerald-100 placeholder:text-emerald-500/50 rounded-xl focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400/40"
+                  {...field}
+                />
               </FormControl>
               <FormMessage className="text-red-400 text-xs" />
             </FormItem>
@@ -97,7 +106,11 @@ export default function ChristmasContactForm() {
                 Subject
               </FormLabel>
               <FormControl>
-                <Input placeholder="Project collaboration or inquiry" className="bg-[#04120A] border-emerald-500/30 text-emerald-100 placeholder:text-emerald-500/50 rounded-xl focus:border-yellow-400" {...field} />
+                <Input
+                  placeholder="Project collaboration or inquiry"
+                  className="bg-[#061A0E]/90 border-emerald-500/40 text-emerald-100 placeholder:text-emerald-500/50 rounded-xl focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400/40"
+                  {...field}
+                />
               </FormControl>
               <FormMessage className="text-red-400 text-xs" />
             </FormItem>
@@ -114,9 +127,9 @@ export default function ChristmasContactForm() {
               </FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Tell me about your project or inquiry..."
+                  placeholder="Tell me about your project, system architecture, or inquiry..."
                   rows={4}
-                  className="bg-[#04120A] border-emerald-500/30 text-emerald-100 placeholder:text-emerald-500/50 rounded-xl focus:border-yellow-400"
+                  className="bg-[#061A0E]/90 border-emerald-500/40 text-emerald-100 placeholder:text-emerald-500/50 rounded-xl focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400/40"
                   {...field}
                 />
               </FormControl>
@@ -125,7 +138,11 @@ export default function ChristmasContactForm() {
           )}
         />
 
-        <Button type="submit" disabled={isSubmitting} className="rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold border border-yellow-400/50 shadow-[0_0_15px_rgba(212,36,38,0.4)] w-full text-sm">
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-600 hover:from-red-500 hover:to-rose-500 text-white font-bold border border-yellow-400/50 shadow-[0_0_20px_rgba(212,36,38,0.4)] w-full text-sm py-3 transition-all hover:scale-[1.01]"
+        >
           {isSubmitting ? (
             <>
               <Sparkles className="mr-2 h-4 w-4 animate-spin" /> Sending Message...
