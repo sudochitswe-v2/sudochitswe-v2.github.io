@@ -102,28 +102,41 @@ export default function SovietHero() {
             </div>
           </ScrollReveal>
 
-          {/* Right Column: 3D Hammer and Sickle Interactive Object with Portrait overlay */}
+          {/* Right Column: 3D Hammer and Sickle Interactive Showcase with Corner Cadre Pass */}
           <ScrollReveal direction="right" duration={0.8} delay={0.2}>
-            <div className="relative flex items-center justify-center">
-              {/* 3D Hammer & Sickle Canvas */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-auto">
+            <div className="relative flex items-center justify-center min-h-[420px] sm:min-h-[500px] lg:min-h-[560px] w-full">
+              {/* Interactive 3D Emblem Helper Badge */}
+              <div className="absolute top-0 right-2 z-20 hidden sm:flex items-center gap-1.5 px-3 py-1 bg-[#B81414]/90 text-[#FFC82C] text-[10px] font-mono font-bold uppercase tracking-wider border border-[#FFC82C] shadow-[2px_2px_0px_0px_#4A0000] pointer-events-none select-none">
+                <span>★</span> 3D EMBLEM • DRAG TO ROTATE
+              </div>
+
+              {/* 3D Hammer & Sickle Canvas (Centerpiece & Fully Visible) */}
+              <div className="relative flex items-center justify-center pointer-events-auto">
                 <SovietThreeCanvas />
               </div>
 
-              {/* Portrait Stamp Overlay */}
-              <div className="relative z-10 p-2 bg-[#B81414] border-4 border-[#FFC82C] shadow-[8px_8px_0px_0px_#4A0000] rotate-[-2deg] hover:rotate-0 transition-transform duration-300">
-                <div className="relative h-56 w-56 overflow-hidden border-2 border-[#FFC82C] sm:h-64 sm:w-64 lg:h-72 lg:w-72">
+              {/* Cadre Official Identity Pass (Corner-pinned so it does not block the 3D emblem) */}
+              <div className="absolute -bottom-4 left-0 sm:bottom-2 sm:left-4 z-20 p-2 bg-card border-3 border-[#B81414] shadow-[6px_6px_0px_0px_#7A0000] rotate-[-4deg] hover:rotate-0 transition-transform duration-300 w-36 sm:w-44 select-none">
+                <div className="bg-[#B81414] text-[#FFC82C] text-center text-[9px] sm:text-[10px] font-headline font-bold py-0.5 uppercase tracking-widest border border-[#FFC82C]">
+                  ★ CADRE PASS ★
+                </div>
+                <div className="relative h-32 sm:h-40 w-full overflow-hidden border border-[#B81414] my-1.5 bg-black/10">
                   <Image
                     src={avatarUrl}
                     alt="Portrait of Comrade Chit Swe"
                     fill
                     className="object-cover contrast-110 sepia-[0.25]"
-                    data-ai-hint="comrade developer portrait"
                     priority
                   />
-                  <div className="absolute bottom-0 inset-x-0 bg-[#B81414] text-[#FFC82C] text-center text-[11px] font-headline font-bold py-0.5 tracking-widest uppercase">
-                    ★ CHIT SWE • STATE ARCHIVE ★
+                  <div className="absolute bottom-0 inset-x-0 bg-[#B81414]/90 text-[#FFC82C] text-center text-[8px] font-mono font-bold py-0.5 uppercase tracking-tighter">
+                    VERIFIED CADRE
                   </div>
+                </div>
+                <div className="text-[10px] sm:text-xs font-headline font-bold text-center text-[#B81414] dark:text-[#FFC82C] uppercase leading-tight pt-0.5">
+                  {profile.name}
+                  <span className="block text-[8px] font-mono text-muted-foreground mt-0.5">
+                    #{profile.dossierNumber || 'CCCP-2026'}
+                  </span>
                 </div>
               </div>
             </div>

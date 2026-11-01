@@ -48,8 +48,7 @@ export const THEME_PROFILES: Record<ThemeId, Partial<ProfileData>> = {
       'Honored specialist in distributed backend architecture and cloud systems for the collective. Laboring tirelessly to construct unbreakable, high-throughput computational machinery.',
     roleBadge: '★ ORDER OF CODE EXCELLENCE ★',
     dossierNumber: 'CCCP-DEV-2026',
-    // Change this path to your Soviet profile picture (e.g. '/images/profile-soviet.png')
-    avatarUrl: '/images/profile.png',
+    avatarUrl: '/images/soviet/profile.png',
   },
 };
 

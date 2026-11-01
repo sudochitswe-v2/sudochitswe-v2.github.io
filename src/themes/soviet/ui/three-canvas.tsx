@@ -16,10 +16,10 @@ export default function SovietThreeCanvas() {
     const scene = new THREE.Scene();
 
     // Camera setup
-    const width = container.clientWidth || 400;
-    const height = container.clientHeight || 400;
+    const width = container.clientWidth || 450;
+    const height = container.clientHeight || 450;
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-    camera.position.z = 6.2;
+    camera.position.z = 5.8;
 
     // Renderer setup
     const renderer = new THREE.WebGLRenderer({
@@ -325,7 +325,7 @@ export default function SovietThreeCanvas() {
   return (
     <div
       ref={containerRef}
-      className="relative h-[340px] w-[340px] sm:h-[440px] sm:w-[440px] lg:h-[500px] lg:w-[500px] cursor-grab active:cursor-grabbing pointer-events-auto"
+      className="relative h-[380px] w-[380px] sm:h-[480px] sm:w-[480px] lg:h-[540px] lg:w-[540px] cursor-grab active:cursor-grabbing pointer-events-auto select-none"
       aria-label="Interactive 3D Soviet Hammer and Sickle Emblem"
     />
   );
