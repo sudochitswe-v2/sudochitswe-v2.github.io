@@ -1,4 +1,4 @@
-export type ThemeId = 'modern' | 'brutalism' | 'retro' | 'soviet';
+export type ThemeId = 'modern' | 'brutalism' | 'retro' | 'soviet' | 'halloween' | 'christmas';
 
 export interface ThemeMeta {
   id: ThemeId;

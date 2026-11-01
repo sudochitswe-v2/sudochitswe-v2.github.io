@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Sparkles, Terminal, Square, Flame, Dices, ChevronDown, Check } from 'lucide-react';
+import { Sparkles, Terminal, Square, Flame, Dices, ChevronDown, Check, Ghost, Gift } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ThemeOption {
@@ -46,10 +46,22 @@ const THEME_OPTIONS: ThemeOption[] = [
     tagline: 'Constructivist & 3D Hammer/Sickle',
     icon: Flame,
   },
+  {
+    id: 'halloween',
+    name: 'Halloween Spooky',
+    tagline: '3D Jack-o\'-Lantern & Spellcraft',
+    icon: Ghost,
+  },
+  {
+    id: 'christmas',
+    name: 'Christmas Festive',
+    tagline: '3D Snow Tree & Santa Workshop',
+    icon: Gift,
+  },
 ];
 
 interface ThemeSwitcherProps {
-  variant?: 'modern' | 'brutalism' | 'retro' | 'soviet';
+  variant?: 'modern' | 'brutalism' | 'retro' | 'soviet' | 'halloween' | 'christmas';
   className?: string;
 }
 
@@ -64,6 +76,12 @@ export function PortfolioThemeSwitcher({ variant = 'modern', className }: ThemeS
   if (variant === 'soviet') {
     triggerClasses =
       'bg-[#B81414] text-[#FFC82C] border-2 border-[#FFC82C] shadow-[3px_3px_0px_0px_#4A0000] font-headline uppercase text-xs font-bold px-3 py-1.5 flex items-center gap-2 hover:bg-[#FFC82C] hover:text-[#7A0000] hover:border-[#B81414] transition-all';
+  } else if (variant === 'halloween') {
+    triggerClasses =
+      'bg-[#FF6B00] text-black border-2 border-[#8A2BE2] shadow-[3px_3px_0px_0px_#8A2BE2] font-bold text-xs uppercase px-3 py-1.5 flex items-center gap-2 hover:bg-[#8A2BE2] hover:text-[#FF6B00] hover:border-[#FF6B00] rounded-md transition-all shadow-[0_0_10px_rgba(255,107,0,0.3)]';
+  } else if (variant === 'christmas') {
+    triggerClasses =
+      'bg-[#D42426] text-[#F8B229] border-2 border-[#F8B229] shadow-[3px_3px_0px_0px_#165B33] font-bold text-xs uppercase px-3 py-1.5 flex items-center gap-2 hover:bg-[#165B33] hover:text-[#F8B229] hover:border-[#D42426] rounded-lg transition-all shadow-[0_0_10px_rgba(248,178,41,0.3)]';
   } else if (variant === 'brutalism') {
     triggerClasses =
       'brutal-border brutal-shadow brutal-press font-mono uppercase text-xs font-bold px-3 py-2 bg-background flex items-center gap-2 hover:bg-accent-yellow hover:text-black transition-none';
@@ -81,6 +99,12 @@ export function PortfolioThemeSwitcher({ variant = 'modern', className }: ThemeS
   if (variant === 'soviet') {
     contentClasses =
       'border-2 border-[#B81414] shadow-[6px_6px_0px_0px_#7A0000] rounded-none bg-card p-1.5 min-w-[240px] font-headline';
+  } else if (variant === 'halloween') {
+    contentClasses =
+      'border-2 border-[#8A2BE2] shadow-[0_0_20px_rgba(138,43,226,0.3)] rounded-lg bg-card/95 backdrop-blur-md p-1.5 min-w-[240px]';
+  } else if (variant === 'christmas') {
+    contentClasses =
+      'border-2 border-[#165B33] shadow-[0_0_20px_rgba(212,36,38,0.25)] rounded-xl bg-card/95 backdrop-blur-md p-1.5 min-w-[240px]';
   } else if (variant === 'brutalism') {
     contentClasses =
       'brutal-border-3 brutal-shadow-lg rounded-none bg-background p-1.5 min-w-[210px] font-mono';
@@ -116,12 +140,20 @@ export function PortfolioThemeSwitcher({ variant = 'modern', className }: ThemeS
           className={cn(
             'text-xs font-semibold px-2 py-1.5 tracking-wider',
             variant === 'soviet' && 'text-[#B81414] dark:text-[#FFC82C] font-headline font-bold uppercase tracking-widest text-sm',
+            variant === 'halloween' && 'text-[#FF6B00] font-bold uppercase tracking-wider text-xs',
+            variant === 'christmas' && 'text-[#D42426] dark:text-[#F8B229] font-bold uppercase tracking-wider text-xs',
             variant === 'brutalism' && 'uppercase text-foreground font-bold',
             variant === 'retro' && 'text-neon-cyan uppercase font-headline tracking-widest text-sm',
             variant === 'modern' && 'text-muted-foreground'
           )}
         >
-          {variant === 'soviet' ? '★ SELECT STATE THEME ★' : 'Portfolio Theme'}
+          {variant === 'soviet'
+            ? '★ SELECT STATE THEME ★'
+            : variant === 'halloween'
+            ? '🎃 SELECT COVEN THEME 🎃'
+            : variant === 'christmas'
+            ? '🎄 SELECT HOLIDAY THEME 🎄'
+            : 'Portfolio Theme'}
         </DropdownMenuLabel>
 
         {/* Random Option */}
@@ -132,12 +164,18 @@ export function PortfolioThemeSwitcher({ variant = 'modern', className }: ThemeS
             mode === 'random' &&
               (variant === 'soviet'
                 ? 'bg-[#B81414] text-[#FFC82C] font-bold border border-[#FFC82C]'
+                : variant === 'halloween'
+                ? 'bg-[#FF6B00] text-black font-bold border border-[#8A2BE2]'
+                : variant === 'christmas'
+                ? 'bg-[#D42426] text-white font-bold border border-[#F8B229]'
                 : variant === 'brutalism'
                 ? 'bg-accent-yellow text-black font-bold'
                 : variant === 'retro'
                 ? 'bg-[#000080] text-neon-yellow font-bold border border-border-bevel'
                 : 'bg-primary/10 text-primary font-semibold'),
             variant === 'soviet' && 'rounded-none hover:bg-[#B81414] hover:text-[#FFC82C] font-headline uppercase',
+            variant === 'halloween' && 'hover:bg-[#FF6B00]/20 hover:text-[#FF6B00]',
+            variant === 'christmas' && 'hover:bg-[#D42426]/20 hover:text-[#D42426]',
             variant === 'brutalism' && 'rounded-none hover:bg-accent-yellow hover:text-black uppercase',
             variant === 'retro' && 'hover:bg-[#101040] text-star-white font-mono'
           )}
@@ -156,6 +194,8 @@ export function PortfolioThemeSwitcher({ variant = 'modern', className }: ThemeS
           className={cn(
             'my-1',
             variant === 'soviet' && 'border-t-2 border-[#B81414]',
+            variant === 'halloween' && 'border-t border-[#8A2BE2]/40',
+            variant === 'christmas' && 'border-t border-[#165B33]/40',
             variant === 'brutalism' && 'border-t-2 border-foreground',
             variant === 'retro' && 'border-t border-border-bevel'
           )}
@@ -175,12 +215,18 @@ export function PortfolioThemeSwitcher({ variant = 'modern', className }: ThemeS
                 isSelected &&
                   (variant === 'soviet'
                     ? 'bg-[#B81414] text-[#FFC82C] font-bold border border-[#FFC82C]'
+                    : variant === 'halloween'
+                    ? 'bg-[#FF6B00] text-black font-bold border border-[#8A2BE2]'
+                    : variant === 'christmas'
+                    ? 'bg-[#D42426] text-white font-bold border border-[#F8B229]'
                     : variant === 'brutalism'
                     ? 'bg-foreground text-background font-bold'
                     : variant === 'retro'
                     ? 'bg-[#000080] text-neon-cyan font-bold border border-border-bevel'
                     : 'bg-accent text-accent-foreground font-semibold'),
                 variant === 'soviet' && 'rounded-none hover:bg-[#B81414] hover:text-[#FFC82C] font-headline uppercase',
+                variant === 'halloween' && 'hover:bg-[#FF6B00]/20 hover:text-[#FF6B00]',
+                variant === 'christmas' && 'hover:bg-[#D42426]/20 hover:text-[#D42426]',
                 variant === 'brutalism' && 'rounded-none hover:bg-accent-yellow hover:text-black uppercase',
                 variant === 'retro' && 'hover:bg-[#101040] text-star-white font-mono'
               )}

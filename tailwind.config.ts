@@ -25,6 +25,8 @@ export default {
         vt323: ['VT323', 'monospace'],
         'share-tech': ['Share Tech Mono', 'monospace'],
         russo: ['"Russo One"', 'sans-serif'],
+        creepster: ['"Creepster"', 'cursive'],
+        christmas: ['"Mountains of Christmas"', 'cursive'],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -64,6 +66,20 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+
+        // Halloween Theme Palettes
+        'halloween-orange': '#FF6B00',
+        'halloween-purple': '#8A2BE2',
+        'halloween-green': '#39FF14',
+        'halloween-dark': '#0D0714',
+        'halloween-blood': '#8B0000',
+
+        // Christmas Theme Palettes
+        'xmas-red': '#D42426',
+        'xmas-green': '#165B33',
+        'xmas-gold': '#F8B229',
+        'xmas-snow': '#F8F9FA',
+        'xmas-dark': '#071E12',
 
         // Soviet Constructivist Theme Palettes
         'soviet-red': '#B81414',
@@ -138,6 +154,17 @@ export default {
           '0%, 100%': { textShadow: '0 0 5px var(--tw-colors-neon-cyan), 0 0 10px var(--tw-colors-neon-cyan)' },
           '50%': { textShadow: '0 0 20px var(--tw-colors-neon-cyan), 0 0 30px var(--tw-colors-neon-cyan)' },
         },
+        flicker: {
+          '0%, 100%': { opacity: '1' },
+          '45%': { opacity: '0.7' },
+          '60%': { opacity: '0.9' },
+          '75%': { opacity: '0.4' },
+          '85%': { opacity: '0.85' },
+        },
+        'spooky-float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -145,6 +172,8 @@ export default {
         'brutal-shake': 'brutal-shake 0.2s ease-in-out',
         'blink': 'blink 1s step-end infinite',
         'glow': 'glow 2s ease-in-out infinite',
+        'flicker': 'flicker 3s infinite',
+        'spooky-float': 'spooky-float 4s ease-in-out infinite',
         'spin-slow': 'spin 8s linear infinite',
       },
     },

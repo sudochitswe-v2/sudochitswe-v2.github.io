@@ -23,6 +23,16 @@ const SovietTheme = dynamic(() => import('./soviet'), {
   loading: () => <ThemeLoadingFallback theme="soviet" />,
 });
 
+const HalloweenTheme = dynamic(() => import('./halloween'), {
+  ssr: false,
+  loading: () => <ThemeLoadingFallback theme="halloween" />,
+});
+
+const ChristmasTheme = dynamic(() => import('./christmas'), {
+  ssr: false,
+  loading: () => <ThemeLoadingFallback theme="christmas" />,
+});
+
 export const THEMES: ThemeMeta[] = [
   {
     id: 'modern',
@@ -56,6 +66,22 @@ export const THEMES: ThemeMeta[] = [
     icon: 'Flame',
     accentColor: '#B81414',
   },
+  {
+    id: 'halloween',
+    name: 'Halloween Spooky',
+    tagline: '3D Jack-o\'-Lantern & Spellcraft',
+    description: 'Eerie cobwebs, 3D glowing Jack-o\'-Lantern, potion purple and pumpkin orange palettes, and arcane grimoires.',
+    icon: 'Ghost',
+    accentColor: '#FF6B00',
+  },
+  {
+    id: 'christmas',
+    name: 'Christmas Festive',
+    tagline: '3D Snow Tree & Santa Workshop',
+    description: 'Falling 3D snowflakes, tiered pine evergreen with glowing star topper, holly red and pine green festive design.',
+    icon: 'Gift',
+    accentColor: '#D42426',
+  },
 ];
 
 export const THEME_COMPONENTS: Record<ThemeId, React.ComponentType> = {
@@ -63,6 +89,8 @@ export const THEME_COMPONENTS: Record<ThemeId, React.ComponentType> = {
   brutalism: BrutalismTheme,
   retro: RetroTheme,
   soviet: SovietTheme,
+  halloween: HalloweenTheme,
+  christmas: ChristmasTheme,
 };
 
 function ThemeLoadingFallback({ theme }: { theme: ThemeId }) {
@@ -70,6 +98,20 @@ function ThemeLoadingFallback({ theme }: { theme: ThemeId }) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#161413] text-[#FFC82C] font-headline text-xl font-bold uppercase tracking-widest border-8 border-[#B81414] m-4 animate-pulse">
         ★ MOBILIZING COLLECTIVE ARSENAL... ★
+      </div>
+    );
+  }
+  if (theme === 'halloween') {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#0D0714] text-[#FF6B00] font-creepster text-2xl tracking-wider border-4 border-[#8A2BE2] m-4 animate-pulse">
+        🎃 SUMMONING THE SPOOKY REALM... 🎃
+      </div>
+    );
+  }
+  if (theme === 'christmas') {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#0A1810] text-[#F8B229] font-christmas text-3xl font-bold tracking-wide border-4 border-[#D42426] m-4 animate-pulse">
+        🎄 DELIVERING NORTH POLE CHEER... 🎄
       </div>
     );
   }

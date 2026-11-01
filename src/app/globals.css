@@ -278,6 +278,72 @@ body {
     --ring: 45 100% 58%;
     --radius: 0px;
   }
+
+  /* ── Halloween Spooky Theme ── */
+  html[data-portfolio-theme="halloween"],
+  html[data-portfolio-theme="halloween"].dark,
+  [data-portfolio-theme="halloween"],
+  [data-portfolio-theme="halloween"].dark,
+  .dark[data-portfolio-theme="halloween"],
+  .dark [data-portfolio-theme="halloween"] {
+    --background: 275 45% 7%; /* Spooky night purple-black #0E0915 */
+    --foreground: 35 100% 95%; /* Pale bone ivory #FFF8ED */
+    --card: 275 40% 11%; /* Haunted chamber purple #181124 */
+    --card-foreground: 35 100% 95%;
+    --popover: 275 40% 11%;
+    --popover-foreground: 35 100% 95%;
+    --primary: 25 100% 50%; /* Jack-o'-lantern Pumpkin Orange #FF6B00 */
+    --primary-foreground: 275 45% 7%;
+    --secondary: 280 80% 45%; /* Witch Purple #8A2BE2 */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 275 30% 16%;
+    --muted-foreground: 275 20% 70%;
+    --accent: 105 100% 54%; /* Slime Toxic Green #39FF14 */
+    --accent-foreground: 275 45% 7%;
+    --destructive: 0 90% 45%; /* Blood Crimson #D80000 */
+    --destructive-foreground: 0 0% 100%;
+    --border: 25 100% 48%; /* Orange border */
+    --input: 275 35% 15%;
+    --ring: 25 100% 50%;
+    --radius: 0.25rem;
+
+    --font-theme-body: 'Inter', sans-serif;
+    --font-theme-headline: 'Creepster', cursive, sans-serif;
+    --font-theme-code: 'Space Mono', monospace;
+  }
+
+  /* ── Christmas Holiday Theme ── */
+  html[data-portfolio-theme="christmas"],
+  html[data-portfolio-theme="christmas"].dark,
+  [data-portfolio-theme="christmas"],
+  [data-portfolio-theme="christmas"].dark,
+  .dark[data-portfolio-theme="christmas"],
+  .dark [data-portfolio-theme="christmas"] {
+    --background: 145 60% 6%; /* Deep Pine Forest Night #061A0E */
+    --foreground: 0 0% 98%; /* Snow White #F8F9FA */
+    --card: 145 45% 10%; /* Evergreen Card #0E2818 */
+    --card-foreground: 0 0% 98%;
+    --popover: 145 45% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 358 75% 48%; /* Holly Santa Red #D42426 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 145 60% 25%; /* Forest Pine Green #195F35 */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 145 30% 16%;
+    --muted-foreground: 145 20% 75%;
+    --accent: 42 95% 55%; /* Jingle Bell Gold #F8B229 */
+    --accent-foreground: 145 60% 10%;
+    --destructive: 358 85% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 358 70% 45%; /* Holly Red border */
+    --input: 145 35% 14%;
+    --ring: 42 95% 55%;
+    --radius: 0.5rem;
+
+    --font-theme-body: 'Inter', sans-serif;
+    --font-theme-headline: 'Mountains of Christmas', cursive, sans-serif;
+    --font-theme-code: 'Space Mono', monospace;
+  }
 }
 
 @layer base {
@@ -424,5 +490,83 @@ body {
     border: 2px dashed #B81414;
     color: #B81414;
     transform: rotate(-1deg);
+  }
+
+  /* ── Halloween Spooky Utilities ── */
+  .halloween-glow {
+    text-shadow: 0 0 10px rgba(255, 107, 0, 0.8), 0 0 20px rgba(138, 43, 226, 0.6);
+  }
+  .halloween-slime-glow {
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.8), 0 0 20px rgba(57, 255, 20, 0.4);
+  }
+  .spooky-card {
+    border: 2px solid #FF6B00;
+    box-shadow: 4px 4px 0px 0px #8A2BE2;
+  }
+  .spooky-btn {
+    background: #FF6B00;
+    color: #0D0714;
+    border: 2px solid #39FF14;
+    box-shadow: 3px 3px 0px 0px #8A2BE2;
+    font-family: 'Creepster', cursive;
+    letter-spacing: 0.08em;
+  }
+  .spooky-btn:hover {
+    background: #39FF14;
+    color: #0D0714;
+    border-color: #FF6B00;
+    box-shadow: 4px 4px 0px 0px #FF6B00;
+  }
+  .spooky-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+  .spiderweb-divider {
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, #8A2BE2, #FF6B00, #39FF14, #FF6B00, #8A2BE2);
+  }
+
+  /* ── Christmas Holiday Utilities ── */
+  .christmas-glow {
+    text-shadow: 0 0 8px rgba(248, 178, 41, 0.8), 0 0 18px rgba(212, 36, 38, 0.5);
+  }
+  .festive-card {
+    border: 2px solid #D42426;
+    box-shadow: 4px 4px 0px 0px #165B33;
+  }
+  .festive-btn {
+    background: #D42426;
+    color: #FFFFFF;
+    border: 2px solid #F8B229;
+    box-shadow: 3px 3px 0px 0px #0B4619;
+    font-family: 'Mountains of Christmas', cursive;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .festive-btn:hover {
+    background: #165B33;
+    color: #F8B229;
+    border-color: #D42426;
+  }
+  .festive-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+  .candy-cane-divider {
+    height: 8px;
+    width: 100%;
+    border-radius: 4px;
+    background: repeating-linear-gradient(
+      -45deg,
+      #D42426,
+      #D42426 12px,
+      #FFFFFF 12px,
+      #FFFFFF 24px,
+      #165B33 24px,
+      #165B33 36px,
+      #FFFFFF 36px,
+      #FFFFFF 48px
+    );
   }
 }

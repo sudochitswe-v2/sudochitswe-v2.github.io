@@ -5,7 +5,7 @@ import type { ThemeId } from '@/types/portfolio';
 
 const THEME_STORAGE_KEY = 'portfolio-theme';
 const THEME_MODE_STORAGE_KEY = 'portfolio-theme-mode';
-export const AVAILABLE_THEMES: ThemeId[] = ['modern', 'brutalism', 'retro', 'soviet'];
+export const AVAILABLE_THEMES: ThemeId[] = ['modern', 'brutalism', 'retro', 'soviet', 'halloween', 'christmas'];
 
 interface PortfolioThemeContextType {
   theme: ThemeId;

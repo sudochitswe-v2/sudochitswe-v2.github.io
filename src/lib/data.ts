@@ -50,6 +50,24 @@ export const THEME_PROFILES: Record<ThemeId, Partial<ProfileData>> = {
     dossierNumber: 'CCCP-DEV-2026',
     avatarUrl: '/images/soviet/profile.png',
   },
+  halloween: {
+    name: 'Chit Swe',
+    title: 'Code Necromancer & Dark Arts Architect',
+    introduction:
+      'Conjuring bewitching digital experiences and summoning resilient, high-throughput backend infrastructure from the computational abyss.',
+    roleBadge: '🎃 GRAND PUMPKIN WIZARD 🎃',
+    dossierNumber: 'SPOOKY-DEV-666',
+    avatarUrl: '/images/profile.png',
+  },
+  christmas: {
+    name: 'Chit Swe',
+    title: 'Chief North Pole Architect',
+    introduction:
+      'Engineering jolly digital wonders, crafting rock-solid backend sleighs, and delivering gift-wrapped, high-performance web applications worldwide.',
+    roleBadge: '🎄 SANTA\'S LEAD ARCHITECT 🎄',
+    dossierNumber: 'XMAS-NORTH-2026',
+    avatarUrl: '/images/profile.png',
+  },
 };
 
 export function getProfileData(theme: ThemeId = 'modern'): ProfileData {
