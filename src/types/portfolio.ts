@@ -16,6 +16,7 @@ export interface ProfileData {
   introduction: string;
   roleBadge?: string;
   dossierNumber?: string;
+  avatarUrl?: string;
   contact: {
     email: string;
   };

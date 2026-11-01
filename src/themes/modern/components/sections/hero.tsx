@@ -20,6 +20,7 @@ const ThreeCanvas = dynamic(() => import('@/components/ui/three-canvas'), {
 export default function Hero() {
   const profile = getProfileData('modern');
   const profileImage = PlaceHolderImages.find((p) => p.id === 'profile');
+  const avatarUrl = profile.avatarUrl || profileImage?.imageUrl || '/images/profile.png';
 
   return (
     <section id="about" className="relative w-full overflow-hidden bg-card py-12 sm:py-24 lg:py-32">
@@ -81,18 +82,15 @@ export default function Hero() {
               </div>
 
               {/* Profile Image overlay with glass backdrop */}
-              {profileImage && (
-                <div className="relative z-10 h-56 w-56 overflow-hidden rounded-full border-4 border-background/80 shadow-2xl backdrop-blur-sm sm:h-72 sm:w-72 lg:h-80 lg:w-80 transition-transform duration-500 hover:scale-105">
-                  <Image
-                    src={profileImage.imageUrl}
-                    alt="Profile picture of Chit Swe"
-                    fill
-                    className="object-cover"
-                    data-ai-hint={profileImage.imageHint}
-                    priority
-                  />
-                </div>
-              )}
+              <div className="relative z-10 h-56 w-56 overflow-hidden rounded-full border-4 border-background/80 shadow-2xl backdrop-blur-sm sm:h-72 sm:w-72 lg:h-80 lg:w-80 transition-transform duration-500 hover:scale-105">
+                <Image
+                  src={avatarUrl}
+                  alt="Profile picture of Chit Swe"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </div>
           </ScrollReveal>
         </div>

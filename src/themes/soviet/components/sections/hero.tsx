@@ -22,6 +22,7 @@ const SovietThreeCanvas = dynamic(() => import('@/themes/soviet/ui/three-canvas'
 export default function SovietHero() {
   const profile = getProfileData('soviet');
   const profileImage = PlaceHolderImages.find((p) => p.id === 'profile');
+  const avatarUrl = profile.avatarUrl || profileImage?.imageUrl || '/images/profile.png';
 
   return (
     <section id="about" className="relative w-full overflow-hidden py-12 sm:py-20 lg:py-28 border-b-4 border-[#B81414]">
@@ -110,23 +111,21 @@ export default function SovietHero() {
               </div>
 
               {/* Portrait Stamp Overlay */}
-              {profileImage && (
-                <div className="relative z-10 p-2 bg-[#B81414] border-4 border-[#FFC82C] shadow-[8px_8px_0px_0px_#4A0000] rotate-[-2deg] hover:rotate-0 transition-transform duration-300">
-                  <div className="relative h-56 w-56 overflow-hidden border-2 border-[#FFC82C] sm:h-64 sm:w-64 lg:h-72 lg:w-72">
-                    <Image
-                      src={profileImage.imageUrl}
-                      alt="Portrait of Comrade Chit Swe"
-                      fill
-                      className="object-cover contrast-110 sepia-[0.25]"
-                      data-ai-hint={profileImage.imageHint}
-                      priority
-                    />
-                    <div className="absolute bottom-0 inset-x-0 bg-[#B81414] text-[#FFC82C] text-center text-[11px] font-headline font-bold py-0.5 tracking-widest uppercase">
-                      ★ CHIT SWE • STATE ARCHIVE ★
-                    </div>
+              <div className="relative z-10 p-2 bg-[#B81414] border-4 border-[#FFC82C] shadow-[8px_8px_0px_0px_#4A0000] rotate-[-2deg] hover:rotate-0 transition-transform duration-300">
+                <div className="relative h-56 w-56 overflow-hidden border-2 border-[#FFC82C] sm:h-64 sm:w-64 lg:h-72 lg:w-72">
+                  <Image
+                    src={avatarUrl}
+                    alt="Portrait of Comrade Chit Swe"
+                    fill
+                    className="object-cover contrast-110 sepia-[0.25]"
+                    data-ai-hint="comrade developer portrait"
+                    priority
+                  />
+                  <div className="absolute bottom-0 inset-x-0 bg-[#B81414] text-[#FFC82C] text-center text-[11px] font-headline font-bold py-0.5 tracking-widest uppercase">
+                    ★ CHIT SWE • STATE ARCHIVE ★
                   </div>
                 </div>
-              )}
+              </div>
             </div>
           </ScrollReveal>
         </div>

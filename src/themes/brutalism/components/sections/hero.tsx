@@ -20,6 +20,7 @@ const ThreeCanvas = dynamic(() => import('@/themes/brutalism/ui/three-canvas'), 
 export default function Hero() {
   const profile = getProfileData('brutalism');
   const profileImage = PlaceHolderImages.find((p) => p.id === 'profile');
+  const avatarUrl = profile.avatarUrl || profileImage?.imageUrl || '/images/profile.png';
 
   return (
     <section id="about" className="relative w-full overflow-hidden bg-card py-12 sm:py-24 lg:py-32">
@@ -85,18 +86,15 @@ export default function Hero() {
               </div>
 
               {/* Profile Image overlay with brutalist frame */}
-              {profileImage && (
-                <div className="relative z-10 h-56 w-56 overflow-hidden rounded-none brutal-border bg-white brutal-shadow hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all sm:h-72 sm:w-72 lg:h-80 lg:w-80">
-                  <Image
-                    src={profileImage.imageUrl}
-                    alt="Profile picture of Chit Swe"
-                    fill
-                    className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
-                    data-ai-hint={profileImage.imageHint}
-                    priority
-                  />
-                </div>
-              )}
+              <div className="relative z-10 h-56 w-56 overflow-hidden rounded-none brutal-border bg-white brutal-shadow hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all sm:h-72 sm:w-72 lg:h-80 lg:w-80">
+                <Image
+                  src={avatarUrl}
+                  alt="Profile picture of Chit Swe"
+                  fill
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                  priority
+                />
+              </div>
             </div>
           </ScrollReveal>
         </div>

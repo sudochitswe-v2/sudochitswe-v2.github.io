@@ -10,6 +10,7 @@ import ScrollReveal from '@/components/ui/scroll-reveal';
 export default function Hero() {
   const profile = getProfileData('retro');
   const profileImage = PlaceHolderImages.find((p) => p.id === 'profile');
+  const avatarUrl = profile.avatarUrl || profileImage?.imageUrl || '/images/profile.png';
 
   return (
     <section id="about" className="relative w-full overflow-hidden py-12 sm:py-24 lg:py-32">
@@ -68,21 +69,18 @@ export default function Hero() {
 
           <ScrollReveal direction="right" duration={0.8} delay={0.2}>
             <div className="relative flex items-center justify-center">
-              {profileImage && (
-                <div className="retro-panel p-2 bg-[#c0c0c0]">
-                  <div className="relative h-64 w-64 overflow-hidden border-4 border-black border-r-white border-b-white sm:h-80 sm:w-80 lg:h-96 lg:w-96">
-                    <Image
-                      src={profileImage.imageUrl}
-                      alt="Profile picture of Chit Swe"
-                      fill
-                      className="object-cover grayscale contrast-125 transition-all duration-300 hover:grayscale-0 hover:contrast-100"
-                      data-ai-hint={profileImage.imageHint}
-                      priority
-                    />
-                    <div className="retro-scanlines"></div>
-                  </div>
+              <div className="retro-panel p-2 bg-[#c0c0c0]">
+                <div className="relative h-64 w-64 overflow-hidden border-4 border-black border-r-white border-b-white sm:h-80 sm:w-80 lg:h-96 lg:w-96">
+                  <Image
+                    src={avatarUrl}
+                    alt="Profile picture of Chit Swe"
+                    fill
+                    className="object-cover grayscale contrast-125 transition-all duration-300 hover:grayscale-0 hover:contrast-100"
+                    priority
+                  />
+                  <div className="retro-scanlines"></div>
                 </div>
-              )}
+              </div>
             </div>
           </ScrollReveal>
         </div>

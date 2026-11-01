@@ -7,6 +7,7 @@ export const PROFILE_DATA: ProfileData = {
     'A passionate and responsible backend-focus Full Stack Developer with a strong aptitude for creative thinking and teamwork. Eager to learn new technologies and build innovative solutions.',
   roleBadge: 'Full Stack Specialist',
   dossierNumber: 'DEV-2026',
+  avatarUrl: '/images/profile.png',
   contact: {
     email: 'chitswe.dev@gmail.com',
   },
@@ -22,6 +23,7 @@ export const THEME_PROFILES: Record<ThemeId, Partial<ProfileData>> = {
     name: 'Chit Swe',
     title: 'Full Stack Developer',
     roleBadge: 'Full Stack Specialist',
+    avatarUrl: '/images/profile.png',
   },
   brutalism: {
     name: 'CHIT SWE',
@@ -29,6 +31,7 @@ export const THEME_PROFILES: Record<ThemeId, Partial<ProfileData>> = {
     introduction:
       'PRAGMATIC, BACKEND-FOCUSED SOFTWARE ENGINEER. BUILDING HIGH-THROUGHPUT ROBUST APPLICATIONS WITH C#, .NET CORE, AND MODERN FRONTENDS.',
     roleBadge: '[VERIFIED ENGINEER]',
+    avatarUrl: '/images/profile.png',
   },
   retro: {
     name: 'Chit Swe',
@@ -36,6 +39,7 @@ export const THEME_PROFILES: Record<ThemeId, Partial<ProfileData>> = {
     introduction:
       'Backend hacker & full-stack architect dialing into high-throughput systems. Specializing in C#, .NET, Linux, and reactive web/mobile experiences.',
     roleBadge: '[ROOT_ACCESS_GRANTED]',
+    avatarUrl: '/images/profile.png',
   },
   soviet: {
     name: 'Comrade Chit Swe',
@@ -44,6 +48,8 @@ export const THEME_PROFILES: Record<ThemeId, Partial<ProfileData>> = {
       'Honored specialist in distributed backend architecture and cloud systems for the collective. Laboring tirelessly to construct unbreakable, high-throughput computational machinery.',
     roleBadge: '★ ORDER OF CODE EXCELLENCE ★',
     dossierNumber: 'CCCP-DEV-2026',
+    // Change this path to your Soviet profile picture (e.g. '/images/profile-soviet.png')
+    avatarUrl: '/images/profile.png',
   },
 };
 
