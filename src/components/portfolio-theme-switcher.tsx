@@ -116,7 +116,7 @@ export function PortfolioThemeSwitcher({ variant = 'modern', className }: ThemeS
   }
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <button
           className={cn(triggerClasses, className)}

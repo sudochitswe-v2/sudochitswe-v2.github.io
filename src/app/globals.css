@@ -5,12 +5,17 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
-  overflow-x: clip;
+  scrollbar-gutter: stable;
 }
 
 body {
   font-family: var(--font-theme-body, Arial, Helvetica, sans-serif);
-  overflow-x: clip;
+}
+
+body[data-scroll-locked] {
+  overflow: visible !important;
+  margin-right: 0px !important;
+  pointer-events: auto !important;
 }
 
 @layer base {
